@@ -1042,7 +1042,7 @@ namespace DotNetTextBox
 
                     //  devenv = (EnvDTE.DTE)System.Runtime.InteropServices.Marshal.GetActiveObject("VisualStudio.DTE.8.0");
 
-                    Debug.WriteLine("显示调试信息");
+                   // Debug.WriteLine("显示调试信息"); //无法在设计时输出
 
                     string projectFile = devenv.ActiveDocument.ProjectItem.ContainingProject.FileName;
                     if (projectFile.IndexOf("http://") == -1)
