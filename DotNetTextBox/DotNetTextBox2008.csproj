@@ -89,6 +89,7 @@
       <Name>System</Name>
     </Reference>
     <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
@@ -111,6 +112,9 @@
     </Compile>
     <Compile Include="CodeElement.cs" />
     <Compile Include="DesignEditors.cs" />
+    <Compile Include="Importexcel.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Language.cs" />
     <Compile Include="LanguageCache.cs" />
     <Compile Include="Languages.cs" />

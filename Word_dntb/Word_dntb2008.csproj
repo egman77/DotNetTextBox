@@ -65,9 +65,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Importexcel.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Importword.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
