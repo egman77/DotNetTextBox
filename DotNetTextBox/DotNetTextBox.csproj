@@ -71,7 +71,6 @@
       <Name>System</Name>
     </Reference>
     <Reference Include="System.configuration" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
@@ -79,6 +78,10 @@
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Web">
       <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WebSite\bin\System.Web.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
@@ -96,9 +99,7 @@
     <Compile Include="LanguagesSerializer.cs" />
     <Compile Include="ResourceManager.cs" />
     <Compile Include="StyleWriter.cs" />
-    <Compile Include="WaterMark.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="WaterMark.cs" />
     <Compile Include="WebControlPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
