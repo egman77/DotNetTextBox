@@ -1031,6 +1031,7 @@ namespace DotNetTextBox
                         }
                     }
 
+                   // devenv = null;
                     if (devenv == null)
                     {
                         //Êä³ö´íÎóÐÅÏ¢
