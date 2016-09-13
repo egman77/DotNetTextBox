@@ -1026,7 +1026,7 @@ a:hover {color:#507CD1;text-decoration :none;position: relative; left: 1px; top:
                                 <br />
                                 <hr size="1" style="border-style:dashed;border-color:#999999" align=center />
                                 页面实际使用效果的演示：<br /><br />
-                    <br /><center><dntb:WebEditor ID="WebEditor2" runat="server" Focus=false Skin="skin/default/" Child="True" /></center><br />
+                    <br /><center><dntb:WebEditor ID="WebEditor2" runat="server" Focus="false" Skin="skin/default/" Child="True" /></center><br />
                 </asp:View>
                 <asp:View ID="demo8" runat="server">
                                 <fieldset>
@@ -1252,17 +1252,18 @@ a:hover {color:#507CD1;text-decoration :none;position: relative; left: 1px; top:
                                 <hr size="1" style="border-style:dashed;border-color:#999999" align=center />
                                 页面实际使用效果的演示：<br /><br />
                     <br /><center>
-                        [选择分页类型]：<asp:dropdownlist id="selectPageOutput" AutoPostBack="true" OnSelectedIndexChanged="ChangeArray" runat="server">
+                        [选择分页类型]：<asp:dropdownList id="selectPageOutput" AutoPostBack="true" OnSelectedIndexChanged="ChangeArray" runat="server">
                         <asp:ListItem Value="manual">手动分页</asp:ListItem>
                         <asp:ListItem Value="auto">自动分页</asp:ListItem>
-                    </asp:DropDownList></center></asp:View>
+                    </asp:dropdownList></center></asp:View>
             </asp:MultiView>
              <br />
             <center>
-            <dntb:WebEditor ID="WebEditor1" runat="server" Focus=false /><br />
+          
+            <dntb:WebEditor ID="WebEditor1" runat="server" Focus="false" Skin="skin/default/" Child="True"/><br />
                 <br />
                                               <asp:Button id="Button1"  OnClick="Button1_OnClick" runat="server" Text="提交内容"></asp:Button>
-          <asp:Button id="Button2"  OnClick="Button2_OnClick" runat="server" Text="清空内容"></asp:Button>
+          <asp:Button id="Button2"  OnClick="Button2_OnClick" runat="server" Text="清空内容" style="margin-top: 0px"></asp:Button>
                                     </center>
             </TD></TR></TABLE></div>
             <asp:Label ID="label1" runat="server"></asp:Label><br />

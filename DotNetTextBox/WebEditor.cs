@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Configuration;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -22,50 +23,52 @@ namespace DotNetTextBox
     /// 控件默认标记的定义
     /// </summary>
 	[ValidationPropertyAttribute("Text")]
-	[ToolboxDataAttribute("<{0}:WebEditor runat=server></{0}:WebEditor>")]
-	[DefaultPropertyAttribute("Text")]
-	public sealed class WebEditor : WebControl,INamingContainer,IPostBackDataHandler
-	{
+    [ToolboxDataAttribute("<{0}:WebEditor runat=server></{0}:WebEditor>")]
+    [DefaultPropertyAttribute("Text")]
+    public sealed class WebEditor : WebControl, INamingContainer, IPostBackDataHandler
+    {
         /// <summary>
         /// 继承Input控件的基类
         /// </summary>
-		public WebEditor(): base("input")
-		{
-		}
+		public WebEditor() : base("input")
+        {
+        }
         /// <summary>
         /// 定义控件属性所用到的初始属性值
         /// </summary>
-        private string tooltip = "",targetid="", codetitle = "以下是代码片段：", quotetitle = "以下是引用片段：", uploadconfig = "default.config", languages = "default", toolbarbgimg = "none", rightclickmenuconfig = "cut,copy,delete,paste,selectall,hr,quote,code,link,properties";
+        private string tooltip = "", targetid = "", codetitle = "以下是代码片段：", quotetitle = "以下是引用片段：", uploadconfig = "default.config", languages = "default", toolbarbgimg = "none", rightclickmenuconfig = "cut,copy,delete,paste,selectall,hr,quote,code,link,properties";
         private bool focus = true, child = false;
-		private Color bordercolor=Color.FromArgb(221,221,221),backcolor=Color.FromName("White"),toolbarcolor=Color.FromArgb(239,239,239),editbordercolor=Color.FromArgb(205,205,211),codebordercolor = Color.FromArgb(101, 149, 214), codebackcolor = Color.FromArgb(232, 244, 255), quotebackcolor = Color.FromArgb(232, 244, 255), quotebordercolor = Color.FromArgb(101, 149, 214);
-        private Unit borderwidth = 0,codeborder = 1, quoteborder = 1;
+        private Color bordercolor = Color.FromArgb(221, 221, 221), backcolor = Color.FromName("White"), toolbarcolor = Color.FromArgb(239, 239, 239), editbordercolor = Color.FromArgb(205, 205, 211), codebordercolor = Color.FromArgb(101, 149, 214), codebackcolor = Color.FromArgb(232, 244, 255), quotebackcolor = Color.FromArgb(232, 244, 255), quotebordercolor = Color.FromArgb(101, 149, 214);
+        private Unit borderwidth = 0, codeborder = 1, quoteborder = 1;
         private BorderStyle borderstyle = BorderStyle.None, codeborderstyle = BorderStyle.Dotted, quoteborderstyle = BorderStyle.Dotted;
-		private ShadowType frameshadow;
-        private XhtmlType xhtml=XhtmlType.None;
-        private int adjustsize = 50, expirehours = 0, pagelength=2000;
+        private ShadowType frameshadow;
+        private XhtmlType xhtml = XhtmlType.None;
+        private int adjustsize = 50, expirehours = 0, pagelength = 2000;
         private pathTypeName pathtype = pathTypeName.AbsoluteFull;
         private NewLineType newlinemode = NewLineType.BR;
         private readonly object _textChanged = new object();
 
+        #region 自定义属性
+
         /// <summary>
         /// 下面开始为自定义控件添加各种的自定义属性
         /// </summary>
-		[Category("操作"),Description("在更改文本属性后激发。")]
-		public event EventHandler TextChanged
-		{
-			add { Events.AddHandler(_textChanged, value); }
-			remove { Events.RemoveHandler(_textChanged, value); }
-		}
+        [Category("操作"), Description("在更改文本属性后激发。")]
+        public event EventHandler TextChanged
+        {
+            add { Events.AddHandler(_textChanged, value); }
+            remove { Events.RemoveHandler(_textChanged, value); }
+        }
 
-		[Bindable(true),Category("Appearance"),Description("控件文本值。")]
-		public string Text
-		{
-			set
-			{
-				ViewState["value"]= value;
-			}
-			get
-			{
+        [Bindable(true), Category("Appearance"), Description("控件文本值。")]
+        public string Text
+        {
+            set
+            {
+                ViewState["value"] = value;
+            }
+            get
+            {
                 if (ViewState["value"] == null)
                 {
                     return String.Empty;
@@ -81,113 +84,113 @@ namespace DotNetTextBox
                         return ViewState["value"].ToString();
                     }
                 }
-			}
-		}
+            }
+        }
 
         [Bindable(true), Category("控件编辑栏"), Description("控件编辑栏框架阴影。"), DefaultValue(ShadowType.Close)]
-		public ShadowType FrameShadow
-		{
-			set
-			{
-				frameshadow= value;
-			}
-			get
-			{
-				return frameshadow;
-			}
-		}
+        public ShadowType FrameShadow
+        {
+            set
+            {
+                frameshadow = value;
+            }
+            get
+            {
+                return frameshadow;
+            }
+        }
 
-		[Bindable(true),Category("控件编辑栏"),Description("控件编辑栏边框色。"),DefaultValue("#CDCDD3"),TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
-		public Color EditBorderColor
-		{
-			set
-			{
-				editbordercolor= value;
-			}
-			get
-			{
-				return editbordercolor;
-			}
-		}
+        [Bindable(true), Category("控件编辑栏"), Description("控件编辑栏边框色。"), DefaultValue("#CDCDD3"), TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
+        public Color EditBorderColor
+        {
+            set
+            {
+                editbordercolor = value;
+            }
+            get
+            {
+                return editbordercolor;
+            }
+        }
 
-		[Bindable(true),Category("控件编辑栏"),Description("控件编辑栏背景色。"),DefaultValue("#FFFFFF"),TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
-		new public Color BackColor
-		{
-			set
-			{
-				backcolor= value;
-			}
-			get
-			{
-				return backcolor;
-			}
-		}
+        [Bindable(true), Category("控件编辑栏"), Description("控件编辑栏背景色。"), DefaultValue("#FFFFFF"), TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
+        new public Color BackColor
+        {
+            set
+            {
+                backcolor = value;
+            }
+            get
+            {
+                return backcolor;
+            }
+        }
 
-		[Bindable(true),Category("Appearance"),Description("页面加载后是否聚焦控件编辑框。"),DefaultValue(true)]
-		public new bool Focus
-		{
-			set
-			{
-				focus= value;
-			}
-			get
-			{
-				return focus;
-			}
-		}
+        [Bindable(true), Category("Appearance"), Description("页面加载后是否聚焦控件编辑框。"), DefaultValue(true)]
+        public new bool Focus
+        {
+            set
+            {
+                focus = value;
+            }
+            get
+            {
+                return focus;
+            }
+        }
 
-		[Bindable(true),Category("Appearance"),Description("控件边框样式的颜色。"),DefaultValue("#DDDDDD")]
-		new public Color BorderColor
-		{
-			set
-			{
-				bordercolor= value;
-			}
-			get
-			{
-				return bordercolor;
-			}
-		}
+        [Bindable(true), Category("Appearance"), Description("控件边框样式的颜色。"), DefaultValue("#DDDDDD")]
+        new public Color BorderColor
+        {
+            set
+            {
+                bordercolor = value;
+            }
+            get
+            {
+                return bordercolor;
+            }
+        }
 
-		[Bindable(true),Category("Appearance"),Description("控件边框样式的宽度。"),DefaultValue("0px")]
-		new public Unit BorderWidth
-		{
-			set
-			{
-				borderwidth= value;
-			}
-			get
-			{
-				if(!borderwidth.IsEmpty)
-				{
-					return borderwidth;
-				}
-				return 0;
-			}
-		}
+        [Bindable(true), Category("Appearance"), Description("控件边框样式的宽度。"), DefaultValue("0px")]
+        new public Unit BorderWidth
+        {
+            set
+            {
+                borderwidth = value;
+            }
+            get
+            {
+                if (!borderwidth.IsEmpty)
+                {
+                    return borderwidth;
+                }
+                return 0;
+            }
+        }
 
         [Bindable(true), Category("Appearance"), Description("控件边框样式。"), DefaultValue(BorderStyle.None)]
-		new public BorderStyle BorderStyle
-		{
-			set
-			{
-				borderstyle= value;
-			}
-			get
-			{
-				return borderstyle;
-			}
-		}
+        new public BorderStyle BorderStyle
+        {
+            set
+            {
+                borderstyle = value;
+            }
+            get
+            {
+                return borderstyle;
+            }
+        }
 
-		[Bindable(true),Category("Appearance"),Description("设置控件皮肤文件的路径。请使用相对路径，相对于system目录，路径最后需带斜杠。"),DefaultValue("skin/xp/")]
-		public string Skin
-		{
-			set
-			{
+        [Bindable(true), Category("Appearance"), Description("设置控件皮肤文件的路径。请使用相对路径，相对于system目录，路径最后需带斜杠。"), DefaultValue("skin/xp/")]
+        public string Skin
+        {
+            set
+            {
                 ViewState["skin"] = value;
-			}
-			get
-			{
+            }
+            get
+            {
                 if (ViewState["skin"] == null)
                 {
                     if (ConfigurationManager.AppSettings["skin"] == null)
@@ -203,34 +206,34 @@ namespace DotNetTextBox
                 {
                     return ViewState["skin"].ToString();
                 }
-			}
-		}
+            }
+        }
 
-		[Bindable(true),Category("Behavior"),Description("将鼠标放在控件时显示的工具提示。")]
-		new public string ToolTip 
-		{
-			set
-			{
-				tooltip= value;
-			}
-			get
-			{
-				return tooltip;
-			}
-		}
+        [Bindable(true), Category("Behavior"), Description("将鼠标放在控件时显示的工具提示。")]
+        new public string ToolTip
+        {
+            set
+            {
+                tooltip = value;
+            }
+            get
+            {
+                return tooltip;
+            }
+        }
 
-		[Bindable(true),Category("控件菜单栏"),Description("控件菜单栏背景色。"),DefaultValue("#EFEFEF"),TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
-		public Color ToolBarColor
-		{
-			set
-			{
-				toolbarcolor= value;
-			}
-			get
-			{
-				return toolbarcolor;
-			}
-		}
+        [Bindable(true), Category("控件菜单栏"), Description("控件菜单栏背景色。"), DefaultValue("#EFEFEF"), TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
+        public Color ToolBarColor
+        {
+            set
+            {
+                toolbarcolor = value;
+            }
+            get
+            {
+                return toolbarcolor;
+            }
+        }
 
         [Bindable(true), Category("控件菜单栏"), Description("控件菜单栏背景图片的网络路径,默认为none。"), DefaultValue("none")]
         public string ToolBarBgImg
@@ -258,9 +261,9 @@ namespace DotNetTextBox
             }
         }
 
-		[Bindable(true),Category("高级设置"),Description("设置控件在代码状态时能否编辑，建议关闭。True=开启 False=关闭"),DefaultValue(true)]
-		public bool Source
-		{
+        [Bindable(true), Category("高级设置"), Description("设置控件在代码状态时能否编辑，建议关闭。True=开启 False=关闭"), DefaultValue(true)]
+        public bool Source
+        {
             get
             {
                 if (null == ViewState["Source"])
@@ -269,153 +272,153 @@ namespace DotNetTextBox
                     return (bool)ViewState["Source"];
             }
             set { ViewState["Source"] = value; }
-		}
+        }
 
-		[Bindable(true),Category("高级设置"),Description("代码样式标题文字。")]
-		public string CodeTitle
-		{
-			set
-			{
-				codetitle= value;
-			}
-			get
-			{
-				if (codetitle!="")
-				{
-					return codetitle;
-				}
-				return "以下是代码片段：";
-			}
-		}
+        [Bindable(true), Category("高级设置"), Description("代码样式标题文字。")]
+        public string CodeTitle
+        {
+            set
+            {
+                codetitle = value;
+            }
+            get
+            {
+                if (codetitle != "")
+                {
+                    return codetitle;
+                }
+                return "以下是代码片段：";
+            }
+        }
 
-		[Bindable(true),Category("高级设置"),Description("代码样式边框色。"),TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
-		public Color CodeBorderColor
-		{
-			set
-			{
-				codebordercolor= value;
-			}
-			get
-			{
-				return codebordercolor;
-			}
-		}
+        [Bindable(true), Category("高级设置"), Description("代码样式边框色。"), TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
+        public Color CodeBorderColor
+        {
+            set
+            {
+                codebordercolor = value;
+            }
+            get
+            {
+                return codebordercolor;
+            }
+        }
 
-		[Bindable(true),Category("高级设置"),Description("代码样式边框粗细。")]
-		public Unit CodeBorder
-		{
-			set
-			{
-				codeborder= value;
-			}
-			get
-			{
-				if(!codeborder.IsEmpty)
-				{
-					return codeborder;
-				}
-				return 1;
-			}
-		}
-		
-		[Bindable(true),Category("高级设置"),Description("代码样式边框样式。")]
-		public BorderStyle CodeBorderStyle
-		{
-			set
-			{
-				codeborderstyle= value;
-			}
-			get
-			{
-				return codeborderstyle;
-			}
-		}
+        [Bindable(true), Category("高级设置"), Description("代码样式边框粗细。")]
+        public Unit CodeBorder
+        {
+            set
+            {
+                codeborder = value;
+            }
+            get
+            {
+                if (!codeborder.IsEmpty)
+                {
+                    return codeborder;
+                }
+                return 1;
+            }
+        }
 
-		[Bindable(true),Category("高级设置"),Description("代码样式背景色。"),TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
-		public Color CodeBackColor
-		{
-			set
-			{
-				codebackcolor= value;
-			}
-			get
-			{
-				return codebackcolor;
-			}
-		}
+        [Bindable(true), Category("高级设置"), Description("代码样式边框样式。")]
+        public BorderStyle CodeBorderStyle
+        {
+            set
+            {
+                codeborderstyle = value;
+            }
+            get
+            {
+                return codeborderstyle;
+            }
+        }
 
-		[Bindable(true),Category("高级设置"),Description("引用样式标题文字。")]
-		public string QuoteTitle
-		{
-			set
-			{
-				quotetitle= value;
-			}
-			get
-			{
-				if (quotetitle!="")
-				{
-					return quotetitle;
-				}
-				return "以下是引用片段：";
-			}
-		}
+        [Bindable(true), Category("高级设置"), Description("代码样式背景色。"), TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
+        public Color CodeBackColor
+        {
+            set
+            {
+                codebackcolor = value;
+            }
+            get
+            {
+                return codebackcolor;
+            }
+        }
 
-		[Bindable(true),Category("高级设置"),Description("引用样式背景色。"),TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
-		public Color QuoteBackColor
-		{
-			set
-			{
-				quotebackcolor= value;
-			}
-			get
-			{
-				return quotebackcolor;
-			}
-		}
+        [Bindable(true), Category("高级设置"), Description("引用样式标题文字。")]
+        public string QuoteTitle
+        {
+            set
+            {
+                quotetitle = value;
+            }
+            get
+            {
+                if (quotetitle != "")
+                {
+                    return quotetitle;
+                }
+                return "以下是引用片段：";
+            }
+        }
 
-		[Bindable(true),Category("高级设置"),Description("引用样式边框色。"),TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
-		public Color QuoteBorderColor
-		{
-			set
-			{
-				quotebordercolor= value;
-			}
-			get
-			{
-				return quotebordercolor;
-			}
-		}
+        [Bindable(true), Category("高级设置"), Description("引用样式背景色。"), TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
+        public Color QuoteBackColor
+        {
+            set
+            {
+                quotebackcolor = value;
+            }
+            get
+            {
+                return quotebackcolor;
+            }
+        }
 
-		[Bindable(true),Category("高级设置"),Description("引用样式边框粗细。")]
-		public Unit QuoteBorder
-		{
-			set
-			{
-				quoteborder= value;
-			}
-			get
-			{
-				if(!quoteborder.IsEmpty)
-				{
-					return quoteborder;
-				}
-				return 1;
-			}
-		}
+        [Bindable(true), Category("高级设置"), Description("引用样式边框色。"), TypeConverterAttribute(typeof(System.Web.UI.WebControls.WebColorConverter))]
+        public Color QuoteBorderColor
+        {
+            set
+            {
+                quotebordercolor = value;
+            }
+            get
+            {
+                return quotebordercolor;
+            }
+        }
+
+        [Bindable(true), Category("高级设置"), Description("引用样式边框粗细。")]
+        public Unit QuoteBorder
+        {
+            set
+            {
+                quoteborder = value;
+            }
+            get
+            {
+                if (!quoteborder.IsEmpty)
+                {
+                    return quoteborder;
+                }
+                return 1;
+            }
+        }
 
         [Bindable(true), Category("高级设置"), Description("引用样式边框样式。"), DefaultValue(BorderStyle.Dotted)]
-		public BorderStyle QuoteBorderStyle
-		{
-			set
-			{
-				quoteborderstyle= value;
-			}
-			get
-			{
-				return quoteborderstyle;
-			}
-		}
+        public BorderStyle QuoteBorderStyle
+        {
+            set
+            {
+                quoteborderstyle = value;
+            }
+            get
+            {
+                return quoteborderstyle;
+            }
+        }
 
         [Bindable(true), Category("高级设置"), Description("设置扩展及收缩编辑框功能的增减幅度。"), DefaultValue(50)]
         public int AdjustSize
@@ -430,18 +433,18 @@ namespace DotNetTextBox
             }
         }
 
-		[Bindable(true),Category("高级设置"),Description("是否子控件。True=是，Flase=否"),DefaultValue(false)]
-		public bool Child
-		{
-			set
-			{
-				child= value;
-			}
-			get
-			{
-				return child;
-			}
-		}
+        [Bindable(true), Category("高级设置"), Description("是否子控件。True=是，Flase=否"), DefaultValue(false)]
+        public bool Child
+        {
+            set
+            {
+                child = value;
+            }
+            get
+            {
+                return child;
+            }
+        }
 
         [Bindable(true), Category("高级设置"), Description("是否自动保存编辑器内容里的远程图片到本地。True=是，Flase=否"), DefaultValue(false)]
         public bool AutoSaveImgToLocal
@@ -724,11 +727,11 @@ namespace DotNetTextBox
             }
         }
 
-		[Bindable(true),Category("Appearance"),Description("获取编辑控件内容的字符数，配合验证控件即可实现限制控件字符数。")]
-		public Int32 Length
-		{
-			get
-			{
+        [Bindable(true), Category("Appearance"), Description("获取编辑控件内容的字符数，配合验证控件即可实现限制控件字符数。")]
+        public Int32 Length
+        {
+            get
+            {
 
                 if (this.Text != null || this.Text != "")
                 {
@@ -745,13 +748,13 @@ namespace DotNetTextBox
                 {
                     return 0;
                 }
-			}
-		}
+            }
+        }
 
 
         [Bindable(true), Category("Layout"), Description("顶端菜单栏区域宽度。")]
         public string TopMenuWidth
-		{
+        {
             set
             {
                 ViewState["TopMenuWidth"] = value;
@@ -768,7 +771,7 @@ namespace DotNetTextBox
                     return ViewState["TopMenuWidth"].ToString();
                 }
             }
-		}
+        }
 
         [Bindable(true), Category("Layout"), Description("顶端菜单栏区域对齐方式。"), DefaultValue(AlignStr.Left)]
         public AlignStr TopMenuAlign
@@ -791,8 +794,8 @@ namespace DotNetTextBox
         }
 
         [Bindable(true), Category("Layout"), Description("顶端菜单栏区域高度。")]
-		public string TopMenuHeight
-		{
+        public string TopMenuHeight
+        {
             set
             {
                 ViewState["TopMenuHeight"] = value;
@@ -808,7 +811,7 @@ namespace DotNetTextBox
                     return ViewState["TopMenuHeight"].ToString();
                 }
             }
-		}
+        }
 
         [Bindable(true), Category("Layout"), Description("状态栏高度。")]
         public string StatusHeight
@@ -851,12 +854,12 @@ namespace DotNetTextBox
             }
         }
 
-		[Bindable(true),Category("Layout"),Description("编辑框高度。")]
+        [Bindable(true), Category("Layout"), Description("编辑框高度。")]
         public string EditHeight
-		{
+        {
             set
             {
-                ViewState["EditHeight"]= value;
+                ViewState["EditHeight"] = value;
             }
             get
             {
@@ -869,31 +872,33 @@ namespace DotNetTextBox
                     return ViewState["EditHeight"].ToString();
                 }
             }
-		}
+        }
 
-		[Browsable(false),DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Hidden)]
-		new public string CssClass
-		{
-			get
-			{
-				return null;
-			}
-		}
+        [Browsable(false), DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Hidden)]
+        new public string CssClass
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        #endregion
         //自定义属性添加完成
 
 
-		/// <summary>
-		/// 将此控件呈现给指定的输出参数。
-		/// </summary>
-		/// <param name="writer">要写出到的 HTML 编写器</param>
-		protected override void AddAttributesToRender(HtmlTextWriter writer)
-		{
-			base.AddAttributesToRender(writer);
+        /// <summary>
+        /// 将此控件呈现给指定的输出参数。
+        /// </summary>
+        /// <param name="writer">要写出到的 HTML 编写器</param>
+        protected override void AddAttributesToRender(HtmlTextWriter writer)
+        {
+            base.AddAttributesToRender(writer);
             writer.AddAttribute(HtmlTextWriterAttribute.Name, this.UniqueID);
-			writer.AddAttribute(HtmlTextWriterAttribute.Type, "hidden" );
-			if (ViewState["value"]!= null)
-				writer.AddAttribute("value",ViewState["value"].ToString());
-		}
+            writer.AddAttribute(HtmlTextWriterAttribute.Type, "hidden");
+            if (ViewState["value"] != null)
+                writer.AddAttribute("value", ViewState["value"].ToString());
+        }
 
 
 
@@ -901,8 +906,8 @@ namespace DotNetTextBox
         /// 获取自定义控件界面初始化的内容来输出控件的用户界面
         /// </summary>
 		protected override void Render(HtmlTextWriter writer)
-		{
-			base.Render(writer);
+        {
+            base.Render(writer);
             bool KeyIsPass = true;
             InterFace getControl = new InterFace();
             if (BrowserIsOK(true))
@@ -913,7 +918,7 @@ namespace DotNetTextBox
                 Int32 countH = Int32.Parse(this.TopMenuHeight.ToLower().Replace("px", "")) + Int32.Parse(this.EditHeight.ToLower().Replace("px", "")) + Int32.Parse(this.StatusHeight.ToLower().Replace("px", ""));
 
                 if (countH != this.Height)
-                    this.EditHeight = (Int32.Parse(this.EditHeight.ToLower().Replace("px", "")) + (this.Height.Value - countH)).ToString()+"px";
+                    this.EditHeight = (Int32.Parse(this.EditHeight.ToLower().Replace("px", "")) + (this.Height.Value - countH)).ToString() + "px";
 
 
                 if (this.Width.ToString() == "")
@@ -1001,20 +1006,43 @@ namespace DotNetTextBox
                     {
                         Page.ClientScript.RegisterStartupScript(typeof(WebEditor), this.ClientID, getControl.getScript(this.ClientID, this.Source, Color.FromArgb(this.backcolor.ToArgb()).Name.Substring(2), this.focus, skinpath, functionpath, this.codetitle, Color.FromArgb(this.CodeBorderColor.ToArgb()).Name.Substring(2), Color.FromArgb(this.CodeBackColor.ToArgb()).Name.Substring(2), this.codeborderstyle.ToString(), this.codeborder.ToString(), this.quotetitle, Color.FromArgb(this.QuoteBackColor.ToArgb()).Name.Substring(2), Color.FromArgb(this.QuoteBorderColor.ToArgb()).Name.Substring(2), this.quoteborder.ToString(), this.quoteborderstyle.ToString(), browerType, this.AdjustSize, this.PathType.ToString(), this.Xhtml.ToString().ToLower(), this.RightClickMenuConfig, this.ExpireHours, this.NewLineMode.ToString().ToLower(), this.getImagesPathID), true);
                     }
-                    
+
                 }
                 else
                 {
                     //设计状态下获取正确的配置文件路径
                     EnvDTE.DTE devenv = null;
-                    try
+
+                    //从vs2005(8),vs2008(9),vs2013(12),vs2015(14)支持到 100
+                    for (int i = 8; i < 100; i++)
                     {
-                        devenv = (EnvDTE.DTE)System.Runtime.InteropServices.Marshal.GetActiveObject("VisualStudio.DTE.8.0");
+                        string v = string.Format("VisualStudio.DTE.{0}.0", i);
+                        try
+                        {
+                            devenv = (EnvDTE.DTE)System.Runtime.InteropServices.Marshal.GetActiveObject(v);
+
+
+                            if (devenv != null)
+                                break;
+                        }
+                        catch //(Exception)
+                        {
+                            //throw;
+                        }
                     }
-                    catch
+
+                    if (devenv == null)
                     {
-                        devenv = (EnvDTE.DTE)System.Runtime.InteropServices.Marshal.GetActiveObject("VisualStudio.DTE.9.0");
+                        //输出错误信息
+                        writer.Write("<style type=\"text/css\"><!--.error {font-size: 9pt;}--></style><center><p></p><table width=\"339\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\" bordercolor=\"#333333\" style=\"border-collapse: collapse; border-style: dotted; border-width: 1\"><tr><td class=\"error\" width=\"335\" height=\"20\" bgcolor=\"#999999\"><font color=\"#FFFFFF\" face=\"Webdings\">&nbsp;.</font><font color=\"#FFFFFF\"><strong>错误提示</strong></font></td></tr><tr><td height=\"85\" bgcolor=\"#efefef\"><table width=\"100%\" height=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tr><td class=\"error\"> <div align=\"center\"><font color=\"#666666\"><strong>无法创建DTE实例对象</strong></font></div></td></tr></table></td></tr></table></center>\r\n");
+                        return;
                     }
+                
+
+                    //  devenv = (EnvDTE.DTE)System.Runtime.InteropServices.Marshal.GetActiveObject("VisualStudio.DTE.8.0");
+
+                    Debug.WriteLine("显示调试信息");
+
                     string projectFile = devenv.ActiveDocument.ProjectItem.ContainingProject.FileName;
                     if (projectFile.IndexOf("http://") == -1)
                     {
@@ -1023,7 +1051,7 @@ namespace DotNetTextBox
                     }
                     browerType = "IE";
                     HTTP_USER_AGENT = "";
-                    menuconfigpath=this.systemFolder + "menuconfig/" + this.MenuConfig;
+                    menuconfigpath = this.systemFolder + "menuconfig/" + this.MenuConfig;
                     if (!System.IO.File.Exists(menuconfigpath))
                     {
                         menuconfigpath = projectFile + "/" + menuconfigpath;
@@ -1046,13 +1074,17 @@ namespace DotNetTextBox
                     //输出控件设计时界面
                     writer.Write(getControl.getHtml(this.ClientID, this.Height.ToString(), this.Width.ToString(), menuconfigpath, Color.FromArgb(this.BorderColor.ToArgb()).Name.Substring(2), Color.FromArgb(this.toolbarcolor.ToArgb()).Name.Substring(2), toolbarbgimages, this.borderwidth.ToString(), this.borderstyle.ToString(), this.FrameShadow.ToString(), Color.FromArgb(this.EditBorderColor.ToArgb()).Name.Substring(2), this.tooltip.ToString(), skinpath, functionpath, this.TopMenuHeight, this.EditHeight, this.StatusHeight, this.TopMenuWidth.ToString(), this.TopMenuAlign.ToString(), browerType, SideMenuWidth, KeyIsPass));
                 }
+
+
+
+
             }
             else
             {
                 //输出错误信息
                 writer.Write("<style type=\"text/css\"><!--.error {font-size: 9pt;}--></style><center><p></p><table width=\"339\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\" bordercolor=\"#333333\" style=\"border-collapse: collapse; border-style: dotted; border-width: 1\"><tr><td class=\"error\" width=\"335\" height=\"20\" bgcolor=\"#999999\"><font color=\"#FFFFFF\" face=\"Webdings\">&nbsp;.</font><font color=\"#FFFFFF\"><strong>错误提示</strong></font></td></tr><tr><td height=\"85\" bgcolor=\"#efefef\"><table width=\"100%\" height=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tr><td class=\"error\"> <div align=\"center\"><font color=\"#666666\"><strong>客户浏览器或操作系统不符合服务器控件的以下要求：</strong><br /><br />操作系统：WIN9X/ME/NT/2K/XP/VISTA<br /><br />浏览器：IE5.5+、FireFox1.0+、Opera9.0+兼容浏览器，需支持Javascript客户端语言及Cookie!</font></div></td></tr></table></td></tr></table></center>\r\n");
             }
-		}
+        }
 
         /// <summary>
         /// 注册控件脚本资源
@@ -1063,34 +1095,34 @@ namespace DotNetTextBox
             {
                 //if (HttpContext.Current.Request.IsLocal)
                 //{
-                    if (!Child)
+                if (!Child)
+                {
+                    string temppath = systemFolder.ToLower().Replace("system_dntb/", "");
+                    if (temppath != "")
                     {
-                        string temppath = systemFolder.ToLower().Replace("system_dntb/", "");
-                        if (temppath != "")
+                        if (HttpContext.Current.Request.Url.AbsoluteUri.ToLower().IndexOf(temppath) == -1)
                         {
-                            if (HttpContext.Current.Request.Url.AbsoluteUri.ToLower().IndexOf(temppath) == -1)
-                            {
-                                temppath = "";
-                            }
+                            temppath = "";
                         }
-
-                        if (HttpContext.Current.Request.ApplicationPath != "/")
-                        {
-                            temppath = "/" + temppath;
-                        }
-                        Page.ClientScript.RegisterClientScriptBlock(typeof(WebEditor), "define", "PathType='" + this.PathType.ToString() + "',urlpath='http://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath + temppath + "';", true);
-
-
-                        if (HttpContext.Current.Request.ServerVariables["HTTP_USER_AGENT"].ToLower().IndexOf("msie") == -1)
-                        {
-                            Page.ClientScript.RegisterClientScriptResource(typeof(WebEditor), "DotNetTextBox.core_gecko.js");
-                        }
-                        else
-                        {
-                            Page.ClientScript.RegisterClientScriptResource(typeof(WebEditor), "DotNetTextBox.core.js");
-                        }
-                        Page.ClientScript.RegisterClientScriptResource(typeof(WebEditor), "DotNetTextBox.share.js");
                     }
+
+                    if (HttpContext.Current.Request.ApplicationPath != "/")
+                    {
+                        temppath = "/" + temppath;
+                    }
+                    Page.ClientScript.RegisterClientScriptBlock(typeof(WebEditor), "define", "PathType='" + this.PathType.ToString() + "',urlpath='http://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath + temppath + "';", true);
+
+
+                    if (HttpContext.Current.Request.ServerVariables["HTTP_USER_AGENT"].ToLower().IndexOf("msie") == -1)
+                    {
+                        Page.ClientScript.RegisterClientScriptResource(typeof(WebEditor), "DotNetTextBox.core_gecko.js");
+                    }
+                    else
+                    {
+                        Page.ClientScript.RegisterClientScriptResource(typeof(WebEditor), "DotNetTextBox.core.js");
+                    }
+                    Page.ClientScript.RegisterClientScriptResource(typeof(WebEditor), "DotNetTextBox.share.js");
+                }
                 //}
             }
             base.OnLoad(e);
@@ -1099,31 +1131,31 @@ namespace DotNetTextBox
         /// <summary>
         /// 自定义控件的回调事件
         /// </summary>
-		bool IPostBackDataHandler.LoadPostData(string postDataKey, NameValueCollection postCollection) 
-		{
-			bool raiseEvent = false;
-			if ( this.Text != postCollection[postDataKey] )
-				raiseEvent = true;
+		bool IPostBackDataHandler.LoadPostData(string postDataKey, NameValueCollection postCollection)
+        {
+            bool raiseEvent = false;
+            if (this.Text != postCollection[postDataKey])
+                raiseEvent = true;
 
-			this.Text = postCollection[postDataKey];
-			return raiseEvent;
-		}
+            this.Text = postCollection[postDataKey];
+            return raiseEvent;
+        }
 
         /// <summary>
         /// 自定义控件的动作事件
         /// </summary>
-		void IPostBackDataHandler.RaisePostDataChangedEvent() 
-		{
-			EventHandler handler = (EventHandler) Events[_textChanged];
-			if (handler != null) 
-				handler(this, EventArgs.Empty);
-		}
+		void IPostBackDataHandler.RaisePostDataChangedEvent()
+        {
+            EventHandler handler = (EventHandler)Events[_textChanged];
+            if (handler != null)
+                handler(this, EventArgs.Empty);
+        }
 
         /// <summary>
         /// 检查客户端浏览器是否兼容控件
         /// </summary>
 		private bool BrowserIsOK(bool flag)
-		{
+        {
             if (!this.DesignMode)
             {
                 if (HttpContext.Current.Request.Browser.EcmaScriptVersion.Major < 1)
@@ -1140,7 +1172,7 @@ namespace DotNetTextBox
             {
                 return true;
             }
-		}
+        }
 
         /// <summary>
         /// 提交时获取内容中的各种地址
@@ -1167,7 +1199,7 @@ namespace DotNetTextBox
             }
         }
 
-        public String subStringHTML(String param, int length,int starchar)
+        public String subStringHTML(String param, int length, int starchar)
         {
             StringBuilder result = new StringBuilder();
             int n = 0;
@@ -1295,7 +1327,7 @@ namespace DotNetTextBox
                 string url = m.Groups["src"].Value;
                 string filepath = url;
 
-                if (url.Substring(0, 7).ToLower() == "http://" && url.ToLower().IndexOf(HttpContext.Current.Request.Url.Host.ToLower())==-1)
+                if (url.Substring(0, 7).ToLower() == "http://" && url.ToLower().IndexOf(HttpContext.Current.Request.Url.Host.ToLower()) == -1)
                 {
                     string KuoZhangMing = "." + url.Substring(url.LastIndexOf(".") + 1);
                     string filename = DateTime.Now.ToString("yyyyMMddHHmmss") + picid++.ToString() + KuoZhangMing;
@@ -1357,7 +1389,7 @@ namespace DotNetTextBox
                                 else
                                 {
                                     saveimg.Dispose();
-                                    saveimg=gifmark.MarkedImage;
+                                    saveimg = gifmark.MarkedImage;
                                 }
                             }
                         }
@@ -1379,7 +1411,7 @@ namespace DotNetTextBox
                                 WaterMark gifmark = new WaterMark();
                                 gifmark.WaterMarkType = MarkType.Image;
                                 gifmark.SourceImage = saveimg;
-                                gifmark.WaterImagePath = Page.Server.MapPath("/"+this.systemFolder + config.SelectNodes("//configuration/watermarkImages_path")[0].InnerText.Trim());
+                                gifmark.WaterImagePath = Page.Server.MapPath("/" + this.systemFolder + config.SelectNodes("//configuration/watermarkImages_path")[0].InnerText.Trim());
                                 gifmark.MarkX = 15;
                                 gifmark.MarkY = 15;
                                 gifmark.Mark();
@@ -1389,7 +1421,7 @@ namespace DotNetTextBox
                         }
 
                         //如果没有设置任何水印，则直接保存原始图片
-                        if (watermarkImageson!="true"&watermarkon!="true")
+                        if (watermarkImageson != "true" & watermarkon != "true")
                         {
                             saveimg.Save(path + filename);
                             saveimg.Dispose();
@@ -1429,7 +1461,7 @@ namespace DotNetTextBox
     public enum AlignStr
     {
         Left = 0,
-        Center =1 ,
+        Center = 1,
         Right = 2,
     }
 
@@ -1460,9 +1492,9 @@ namespace DotNetTextBox
     /// </summary>
     public sealed class InterFace
     {
-        private StringBuilder TextBoxDoc = new StringBuilder(),topMenu = new StringBuilder(),statusMenu = new StringBuilder(),bottommenu=new StringBuilder(),sidemenu=new StringBuilder(), TextBoxScript = new StringBuilder();
-        private Int32 divid = 0, dragid=0;
-        
+        private StringBuilder TextBoxDoc = new StringBuilder(), topMenu = new StringBuilder(), statusMenu = new StringBuilder(), bottommenu = new StringBuilder(), sidemenu = new StringBuilder(), TextBoxScript = new StringBuilder();
+        private Int32 divid = 0, dragid = 0;
+
         #region 生成控件界面的HTML代码
         /// <summary>
         /// 生成控件界面的HTML代码
@@ -1472,7 +1504,7 @@ namespace DotNetTextBox
         {
             if (KeyIsPass)
             {
-                string dom0 = "", dom1 = "", dom2 = "", dom3="",dragend = "", customize = "";
+                string dom0 = "", dom1 = "", dom2 = "", dom3 = "", dragend = "", customize = "";
                 XmlReader reader;
                 string[] parameter;
                 reader = XmlReader.Create(menuconfig);
@@ -1541,7 +1573,7 @@ namespace DotNetTextBox
                 else if (browertype == "Opera")
                 {
                     dom2 = "<div id='dom2' style=\"float:right;width:130px\">";
-                    tw = Int32.Parse(tw.Replace("px","")) + 15 + "px";
+                    tw = Int32.Parse(tw.Replace("px", "")) + 15 + "px";
                     TextBoxDoc.Append("<link href='" + skin + "toolbar_opera.css' rel=\"stylesheet\" type=\"text/css\" />\r\n");
                 }
                 else
@@ -1620,7 +1652,7 @@ namespace DotNetTextBox
                         break;
                     case "pastetext":
                     case "pasteword":
-                        strname = str+"_str";
+                        strname = str + "_str";
                         break;
                     default:
                         strname = str;
@@ -1635,10 +1667,10 @@ namespace DotNetTextBox
                     varStr.Append("," + strname + "='" + ResourceManager.GetString(str) + "'");
                 }
             }
-            TextBoxScript.Append(varStr.ToString()+";\r\n");
+            TextBoxScript.Append(varStr.ToString() + ";\r\n");
             varStr = null;
             TextBoxScript.Append("var newlinemode='" + newlinemode + "',getimagespathid='" + getImagesPathID + "',xhtmltype='" + xhtml + "',expirehours=" + expirehours + ",domid=" + dragid + ", warning='" + ResourceManager.GetString("warning") + "',removedwordformat='" + ResourceManager.GetString("removedwordformat") + "',editlink='" + ResourceManager.GetString("editlink") + "',addlink='" + ResourceManager.GetString("addlink") + "',codetitle='" + codetitle + "',quotetitle='" + quotetitle + "',rcmenucfg='" + rightclickmenuconfig + "';");
-            TextBoxScript.Append("var shine='"+ResourceManager.GetString("shine")+"',nowcolorstr='" + ResourceManager.GetString("nowcolor") + "',custom='" + ResourceManager.GetString("customfont") + "',customcolorstr='" + ResourceManager.GetString("customcolor") + "',msncheck='" + ResourceManager.GetString("msncheck") + "',icqcheck='" + ResourceManager.GetString("icqcheck") + "',sendmsg='" + ResourceManager.GetString("sendmsg") + "',errorparameter='" + ResourceManager.GetString("errorparameter") + "',replacesuccessful='" + ResourceManager.GetString("replacesuccessful") + "',notfound='" + ResourceManager.GetString("notfound") + "',findsuccessful='" + ResourceManager.GetString("findsuccessful") + "',setupfont='" + ResourceManager.GetString("setupfont") + "',inputcolorcode='" + ResourceManager.GetString("inputcolorcode") + "';");
+            TextBoxScript.Append("var shine='" + ResourceManager.GetString("shine") + "',nowcolorstr='" + ResourceManager.GetString("nowcolor") + "',custom='" + ResourceManager.GetString("customfont") + "',customcolorstr='" + ResourceManager.GetString("customcolor") + "',msncheck='" + ResourceManager.GetString("msncheck") + "',icqcheck='" + ResourceManager.GetString("icqcheck") + "',sendmsg='" + ResourceManager.GetString("sendmsg") + "',errorparameter='" + ResourceManager.GetString("errorparameter") + "',replacesuccessful='" + ResourceManager.GetString("replacesuccessful") + "',notfound='" + ResourceManager.GetString("notfound") + "',findsuccessful='" + ResourceManager.GetString("findsuccessful") + "',setupfont='" + ResourceManager.GetString("setupfont") + "',inputcolorcode='" + ResourceManager.GetString("inputcolorcode") + "';");
             TextBoxScript.Append("var simsun='" + ResourceManager.GetString("simsun") + "',simhei='" + ResourceManager.GetString("simhei") + "',stliti='" + ResourceManager.GetString("stliti") + "',simyou='" + ResourceManager.GetString("simyou") + "',simkai='" + ResourceManager.GetString("simkai") + "',simfang='" + ResourceManager.GetString("simfang") + "',newsimsun='" + ResourceManager.GetString("newsimsun") + "',stcaiyun='" + ResourceManager.GetString("stcaiyun") + "',stfangso='" + ResourceManager.GetString("stfangso") + "',stxinwei='" + ResourceManager.GetString("stxinwei") + "',normal='" + ResourceManager.GetString("normal") + "',address='" + ResourceManager.GetString("address") + "',redo='" + ResourceManager.GetString("redo") + "',undo='" + ResourceManager.GetString("undo") + "';\r\n");
             TextBoxScript.Append("var skin='" + skin + "',functionstr='" + function + "',adjustsize=" + adjustsize + ",sourcestr=" + source.ToString().ToLower() + ",dd='" + ResourceManager.GetString("dd") + "',dt='" + ResourceManager.GetString("dt") + "',menulist='" + ResourceManager.GetString("menu") + "',dirlist='" + ResourceManager.GetString("dir") + "',pre='" + ResourceManager.GetString("pre") + "',selfontsize='" + ResourceManager.GetString("fontsize") + "',delhtmltag='" + ResourceManager.GetString("delhtmltag") + "',delwordtag='" + ResourceManager.GetString("delwordtag") + "',delstyletag='" + ResourceManager.GetString("delstyletag") + "',delfonttag='" + ResourceManager.GetString("delfonttag") + "',delspantag='" + ResourceManager.GetString("delspantag") + "',cleancodesuccessful='" + ResourceManager.GetString("cleancodesuccessful") + "';\r\n");
             TextBoxScript.Append("var blink='" + ResourceManager.GetString("blink") + "',marquee='" + ResourceManager.GetString("marquee") + "',delline='" + ResourceManager.GetString("delline") + "',big='" + ResourceManager.GetString("big") + "',small='" + ResourceManager.GetString("small") + "',h1='" + ResourceManager.GetString("h1") + "',h2='" + ResourceManager.GetString("h2") + "',h3='" + ResourceManager.GetString("h3") + "',h4='" + ResourceManager.GetString("h4") + "',h5='" + ResourceManager.GetString("h5") + "',h6='" + ResourceManager.GetString("h6") + "',paragraph='" + ResourceManager.GetString("paragraph") + "';");
@@ -1696,7 +1728,7 @@ namespace DotNetTextBox
                 TextBoxScript.Append("dntb_" + tid + ".document.attachEvent('onclick',popupmenu_hide);\r\n");
                 TextBoxScript.Append("dntb_" + tid + ".document.attachEvent('onmouseup',function(e){checkformat('" + tid + "')});\r\n");
                 TextBoxScript.Append("dntb_" + tid + ".document.attachEvent('onkeyup',function(e){checkformat('" + tid + "')});\r\n");
-                
+
                 if (newlinemode == "br")
                 {
                     TextBoxScript.Append("dntb_" + tid + ".document.attachEvent('onkeypress',function(e){insertBr(e,dntb_" + tid + ")});\r\n");
@@ -1714,7 +1746,7 @@ namespace DotNetTextBox
 
                 if (PathType != "AbsoluteFull")
                 {
-                    if (xhtml!="none")
+                    if (xhtml != "none")
                     {
                         TextBoxScript.Append("document.getElementById('" + tid + "').value = urlchange(getXHtml(dntb_" + tid + "));\r\n");
                     }
@@ -1782,7 +1814,7 @@ namespace DotNetTextBox
         /// </summary>
         private string getFunction(string Name, string tid, string skin, string function)
         {
-            string enwidth, enwidth2, enlw,menustr="";
+            string enwidth, enwidth2, enlw, menustr = "";
             switch (Name.ToLower())
             {
                 case "br":
