@@ -1,0 +1,380 @@
+<html>
+<head>
+<title>配置可隐藏菜单</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+td {  font-family:"宋体","Verdana"; font-size: 9pt}
+.highlight {  background-color: #000000; color: #FFFFFF}body {
+	font-size: 9pt;
+}
+hr {
+	border: dotted #333333;
+
+}
+table {
+	font-size: 9pt;
+}
+pre.syntax span.lang
+{
+	margin: 0;
+	font-weight: normal;
+	
+}
+a:link {color:#000000;text-decoration :none}
+a:visited {color:#000000;text-decoration :none}
+a:hover {color:#507CD1;text-decoration :none;position: relative; left: 1px; top: 1px; clip:  rect(   )}
+a.nomove:link {color:#000000;text-decoration :none}
+a.nomove:visited {color:#000000;text-decoration :none}
+a.nomove:hover {color:#507CD1;text-decoration :none;position: relative; left: 0px; top: 0px; clip:  rect(   )}
+</style>
+</head>
+<body topmargin="5" style="font-size: 9pt" bottommargin="5">
+<table width="100%" border="0" bgcolor="silver" cellspacing="0" cellpadding="0" height="40" align="center">
+    <tr>
+      <td width="9%" align="right" style="height: 60px"><a href="http://aspxcn.com.cn" target=_blank><img src="logo.png" width="260" height="60" border=0px align=baseline></a></td>
+        <td width="91%" colspan="3" align="right" style="height: 60px">&nbsp;</td>
+    </tr>
+</table>
+<br>
+<table width="98%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#333333" id="AutoNumber1" style="BORDER-RIGHT: 1px dotted; BORDER-TOP: 1px dotted; BORDER-LEFT: 1px dotted; BORDER-BOTTOM: 1px dotted; BORDER-COLLAPSE: collapse">
+  <tr> 
+    <td height="85" bgcolor="#efefef"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td class="error" style="width: 3%"><div><br>
+            </div></td>
+          <td width="94%" class="error">
+              
+            <div><b><br>
+                  </b> <img src="url.gif" width="16" height="16" style="font-weight: bold"><strong> </strong>
+                DotNetTextBox控件配置可隐藏菜单
+                  <hr noshade>
+                <br />
+                &nbsp; &nbsp; 以下是配置了多个可隐藏菜单工具栏的标准配置文件，也可直接参照system_dntb/menuconifg/default_style3.config文件：<br />
+                    <br>
+                <div style="border-right: #cccccc 1px solid; padding-right: 5px; border-top: #cccccc 1px solid;
+                    padding-left: 4px; font-size: 13px; padding-bottom: 4px; border-left: #cccccc 1px solid;
+                    width: 98%; word-break: break-all; padding-top: 4px; border-bottom: #cccccc 1px solid;
+                    background-color: #ffffff">
+                    <div>
+                        <span style="color: #0000ff">&lt;?</span><span style="color: #ff00ff">xml version="1.0"
+                            encoding="utf-8" </span><span style="color: #0000ff">?&gt;</span><span style="color: #000000"><br />
+                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">configuration</span><span
+                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000">dragtoolbar</span><span
+                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #000000">paragraph</span><span
+                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">specialtype</span><span
+                                                                style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000">dragtoolbarend</span><span
+                                                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">dragtoolbar</span><span
+                                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                            </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">可隐藏菜单工具栏配置的开始标记,toolbarshow配置节默认为显示工具栏</span><span
+                                                                                                style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">toolbarshow</span><span
+                                                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                            </span>
+                        <span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                            style="color: #0000ff">&gt;</span><span style="color: #000000">justifyleft</span><span
+                                style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000">justifycenter</span><span
+                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">justifyright</span><span
+                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">blank</span><span
+                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">insertorderedlist</span><span
+                                                                                style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000">insertunorderedlist</span><span
+                                                                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">outdent</span><span
+                                                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                            </span>
+                        <span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                            style="color: #0000ff">&gt;</span><span style="color: #000000">indent</span><span
+                                style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000">blank</span><span
+                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">undo</span><span style="color: #0000ff">&lt;/</span><span
+                                                        style="color: #800000">topmenu</span><span style="color: #0000ff">&gt;</span><span
+                                                            style="color: #000000"><br />
+                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">redo</span><span style="color: #0000ff">&lt;/</span><span
+                                                                style="color: #800000">topmenu</span><span style="color: #0000ff">&gt;</span><span
+                                                                    style="color: #000000"><br />
+                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">blank</span><span
+                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">delete</span><span
+                                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">cut</span><span style="color: #0000ff">&lt;/</span><span
+                                                                                                style="color: #800000">topmenu</span><span style="color: #0000ff">&gt;</span><span
+                                                                                                    style="color: #000000"><br />
+                                                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">search</span><span
+                                                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                            </span>
+                        <span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                            style="color: #0000ff">&gt;</span><span style="color: #000000">copy</span><span style="color: #0000ff">&lt;/</span><span
+                                style="color: #800000">topmenu</span><span style="color: #0000ff">&gt;</span><span
+                                    style="color: #000000"><br />
+                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000">paste</span><span
+                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #000000">printer</span><span
+                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">toolbarshowend</span><span
+                                                                style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                    </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">隐藏工具栏的结束标记,必须与toolbarshow开始标记配对使用,标记区域内的菜单功能将自动进入可隐藏工具栏</span><span
+                                                                        style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">dragtoolbarend</span><span
+                                                                                style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000">br</span><span style="color: #0000ff">&lt;/</span><span
+                                                                                            style="color: #800000">topmenu</span><span style="color: #0000ff">&gt;</span><span
+                                                                                                style="color: #000000"><br />
+                                                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">dragtoolbar</span><span
+                                                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                        </span>
+                        <span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                            style="color: #0000ff">&gt;</span><span style="color: #000000">selFont</span><span
+                                style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000">fontSize</span><span
+                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">dragtoolbarend</span><span
+                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">dragtoolbar</span><span
+                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">bold</span><span style="color: #0000ff">&lt;/</span><span
+                                                                                style="color: #800000">topmenu</span><span style="color: #0000ff">&gt;</span><span
+                                                                                    style="color: #000000"><br />
+                                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">italic</span><span
+                                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">underline</span><span
+                                                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                        </span>
+                        <span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                            style="color: #0000ff">&gt;</span><span style="color: #000000">blank</span><span
+                                style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000">inserthorizontalrule</span><span
+                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">font</span><span style="color: #0000ff">&lt;/</span><span
+                                                        style="color: #800000">topmenu</span><span style="color: #0000ff">&gt;</span><span
+                                                            style="color: #000000"><br />
+                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">bgcolor</span><span
+                                                                style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000">createlink</span><span
+                                                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">blank</span><span
+                                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">fullscreen</span><span
+                                                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                        </span>
+                        <span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                            style="color: #0000ff">&gt;</span><span style="color: #000000">table</span><span
+                                style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000">blank</span><span
+                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">可隐藏工具栏配置的开始标记,toolbarhide配置节默认为隐藏工具栏</span><span
+                                                    style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                        style="color: #0000ff">&gt;</span><span style="color: #000000">toolbarhide</span><span
+                                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">insertfile</span><span
+                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">insertimage</span><span
+                                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">insertmedia</span><span
+                                                                                                style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                    </span>
+                        <span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                            style="color: #0000ff">&gt;</span><span style="color: #000000">inserttemplate</span><span
+                                style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000">date</span><span style="color: #0000ff">&lt;/</span><span
+                                            style="color: #800000">topmenu</span><span style="color: #0000ff">&gt;</span><span
+                                                style="color: #000000"><br />
+                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #000000">emot</span><span style="color: #0000ff">&lt;/</span><span
+                                                    style="color: #800000">topmenu</span><span style="color: #0000ff">&gt;</span><span
+                                                        style="color: #000000"><br />
+                                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                        style="color: #0000ff">&gt;</span><span style="color: #000000">toolbarhideend</span><span
+                                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">隐藏工具栏的结束标记,必须与toolbarhide开始标记配对使用,标记区域内的菜单功能将自动进入可隐藏工具栏</span><span
+                                                                    style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">topmenu</span><span
+                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000">dragtoolbarend</span><span
+                                                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">topmenu</span><span
+                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">statusmenu</span><span
+                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">dragtoolbar</span><span
+                                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">statusmenu</span><span
+                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">statusmenu</span><span
+                                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">imgsource</span><span
+                                                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">statusmenu</span><span
+                                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                        </span>
+                        <span style="color: #0000ff">&lt;</span><span style="color: #800000">statusmenu</span><span
+                            style="color: #0000ff">&gt;</span><span style="color: #000000">imgedit</span><span
+                                style="color: #0000ff">&lt;/</span><span style="color: #800000">statusmenu</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">statusmenu</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000">imgpreview</span><span
+                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">statusmenu</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">statusmenu</span><span
+                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">plus</span><span style="color: #0000ff">&lt;/</span><span
+                                                        style="color: #800000">statusmenu</span><span style="color: #0000ff">&gt;</span><span
+                                                            style="color: #000000"><br />
+                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">statusmenu</span><span
+                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">min</span><span style="color: #0000ff">&lt;/</span><span
+                                                                style="color: #800000">statusmenu</span><span style="color: #0000ff">&gt;</span><span
+                                                                    style="color: #000000"><br />
+                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">statusmenu</span><span
+                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">dragtoolbarend</span><span
+                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">statusmenu</span><span
+                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">bottommenu</span><span
+                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">dragtoolbar</span><span
+                                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">bottommenu</span><span
+                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                        </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">可隐藏工具栏配置的开始标记,toolbarhide配置节默认为隐藏工具栏</span><span
+                                                                                            style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">bottommenu</span><span
+                                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">toolbarhide</span><span
+                                                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">bottommenu</span><span
+                                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                        </span>
+                        <span style="color: #0000ff">&lt;</span><span style="color: #800000">bottommenu</span><span
+                            style="color: #0000ff">&gt;</span><span style="color: #000000">getpage</span><span
+                                style="color: #0000ff">&lt;/</span><span style="color: #800000">bottommenu</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">plugin_bottommenu</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000">openwin,wordfunction,importword.aspx,img/word.gif,400,138</span><span
+                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">plugin_bottommenu</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">bottommenu</span><span
+                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">symbol</span><span
+                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">bottommenu</span><span
+                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">bottommenu</span><span
+                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">codehighlight</span><span
+                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">bottommenu</span><span
+                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">bottommenu</span><span
+                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">help</span><span style="color: #0000ff">&lt;/</span><span
+                                                                                style="color: #800000">bottommenu</span><span style="color: #0000ff">&gt;</span><span
+                                                                                    style="color: #000000"><br />
+                                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">bottommenu</span><span
+                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">toolbarhideend</span><span
+                                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">bottommenu</span><span
+                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                            </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">隐藏工具栏的结束标记,必须与toolbarhide开始标记配对使用,标记区域内的菜单功能将自动进入可隐藏工具栏</span><span
+                                                                                                style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">bottommenu</span><span
+                                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">dragtoolbarend</span><span
+                                                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">bottommenu</span><span
+                                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                            </span>
+                        <span style="color: #0000ff">&lt;/</span><span style="color: #800000">configuration</span><span
+                            style="color: #0000ff">&gt;</span></div>
+                </div>
+            </div>
+              <br />
+              <span style="color: black">&nbsp; &nbsp; 可隐藏工具栏功能的配置节可以配置多个,一个完整的配置节必须含有toolbarshow及toolbarshowend或toolbarhide及toolbarhideend!<br />
+                  <br />
+              </span>
+          </td>
+          <td width="3%" class="error"></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<div align="center"> 
+  <hr noshade>
+  <div align="left"><a href="http://www.aspxcn.com.cn"><font color="#000000"><span style="font-family: Arial"><span style="font-size: 12pt">&copy;</span> </span>2003-2009 DotNetTextBox&#8482; v6.0 DotNet中华网版权所有</font></a></div>
+</div>
+</body>
+</html>

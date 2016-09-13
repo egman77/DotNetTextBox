@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>制作语言文件的说明</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+td {  font-family:"宋体","Verdana"; font-size: 9pt}
+.highlight {  background-color: #000000; color: #FFFFFF}body {
+	font-size: 9pt;
+}
+hr {
+	border: dotted #333333;
+
+}
+table {
+	font-size: 9pt;
+}
+pre.syntax span.lang
+{
+	margin: 0;
+	font-weight: normal;
+	
+}
+a:link {color:#000000;text-decoration :none}
+a:visited {color:#000000;text-decoration :none}
+a:hover {color:#507CD1;text-decoration :none;position: relative; left: 1px; top: 1px; clip:  rect(   )}
+a.nomove:link {color:#000000;text-decoration :none}
+a.nomove:visited {color:#000000;text-decoration :none}
+a.nomove:hover {color:#507CD1;text-decoration :none;position: relative; left: 0px; top: 0px; clip:  rect(   )}
+</style>
+</head>
+<body topmargin="5" style="font-size: 9pt" bottommargin="5">
+<table width="100%" border="0" bgcolor="silver" cellspacing="0" cellpadding="0" height="40" align="center">
+    <tr>
+      <td width="9%" align="right" style="height: 60px"><a href="http://aspxcn.com.cn" target=_blank><img src="logo.png" width="260" height="60" border=0px align=baseline></a></td>
+        <td width="91%" colspan="3" align="right" style="height: 60px">&nbsp;</td>
+    </tr>
+</table>
+<br>
+<table width="98%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#333333" id="AutoNumber1" style="BORDER-RIGHT: 1px dotted; BORDER-TOP: 1px dotted; BORDER-LEFT: 1px dotted; BORDER-BOTTOM: 1px dotted; BORDER-COLLAPSE: collapse">
+  <tr> 
+    <td height="85" bgcolor="#efefef"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="3%" class="error"><div><br>
+            </div></td>
+          <td width="94%" class="error">
+              
+            <div><b><br>
+                  </b> <img src="url.gif" width="16" height="16" style="font-weight: bold"><strong> </strong>
+                DotNetTextBox控件<font color="#000000">制作语言文件的说明</font>
+                  <hr noshade>
+                  <p>1)比如我们要制作一个繁体中文的语言文件,那么我们首先在config/目录下新建一个以标准语言代码简称&quot;zh-tw&quot;命名的目录,并且把config/zh-cn/下的Resources.xml复制到zh-tw/目录下。</p>
+                  <p>2)之后用记事本打开system_dntb\zh-tw\Resources.xml文件，将其中的简体中文转换为繁体中文即可，如：<br>
+                    &lt;resource name=&quot;bold&quot;&gt;粗体&lt;/resource&gt;<br>
+                    转换为<br>
+                    &lt;resource name=&quot;bold&quot;&gt;粗體&lt;/resource&gt;<br>
+                    同理，制作其它语言的文件也只需要按照上面的所说的那样将简体中文转换成对应的语言。</p>
+                  <p>
+                      3)对于外挂插件(弹出窗口)的功能，我们也可以将其修改为支持国际化多语言，具体可以参照system_dntb目录下的PasteCode.aspx及PasteCode.aspx.cs中的代码。需要注意的是，当修改完页面文件后，需为所有的语言文件添加对应的显示文字，如以下一段：<br>
+                    &lt;!--外挂插件的多语言(弹出窗口)--&gt;<br>
+  &lt;resource name=&quot;codehighlighter&quot;&gt;插入高亮代码[自定义功能]&lt;/resource&gt;<br>
+  &lt;resource name=&quot;codetype&quot;&gt;代码类型&lt;/resource&gt;<br>
+  &lt;resource name=&quot;codecontent&quot;&gt;代码内容&lt;/resource&gt;<br>
+  &lt;resource name=&quot;LineNumberMarginVisibleCheckBox&quot;&gt;允许显示行号&lt;/resource&gt;<br>
+  &lt;resource name=&quot;OutliningEnabledCheckBox&quot;&gt;允许代码折叠&lt;/resource&gt;<br>
+  &lt;resource name=&quot;HighlightButton&quot;&gt;插入代码&lt;/resource&gt;</p>
+                  <p>4)对于外挂插件(内部命令)的功能,如果我们在system_dntb/menuconfig/下的config文件配置了：<br>
+                      &lt;plugin_所在工具栏名称&gt;插入网页方框,InsertFieldset,img/fieldset.gif&lt;/plugin_所在工具栏名称&gt;<br>
+                    那么我们只需要在所有的语言文件里添加如zh-cn/Resources.xml里的配置值：<br>
+                    &lt;resource name=&quot;插入网页方框&quot;&gt;插入网页方框&lt;/resource&gt;<br>
+                      其中name属性的值要与&lt;plugin_所在工具栏名称&gt;的第二个参数一致，这个值可以是中文也可以是英文，建议使用英文（因为要保持兼容性，所以这里用中文作第一个标识参数）如果用英文作标识参数，那只需要作如下修改:<br>
+                      <plugin_bottommenu>
+</plugin_bottommenu>
+                      菜单配置文件修改为：<br />
+                      &lt;plugin_所在工具栏名称&gt;command,InsertFieldset,InsertFieldset,img/fieldset.gif&lt;/plugin_所在工具栏名称&gt;<br />
+                      <br />
+                      多语言资源文件修改为：<br>
+                    &lt;resource name=&quot;InsertFieldset&quot;&gt;插入网页方框&lt;/resource&gt;</p>
+                  <p>
+                      5)需要注意的是,制作语言文件的时候,新建目录采用的语言代码简称必须符合标准,否则控件自适应功能将无法找到正确的语言界面。<br>
+                    以下附部分常见的国际标准语言代码简称<br>
+                    简体中文：zh-cn 繁体中文：zh-tw 英语:en-us 德语：de-de 日语：ja-jp 俄语：ru 瑞典语：sv 法语:fr-fr 丹麦语:da-DK<br>
+                    意大利语：it-it 希腊语：el-GR 荷兰语：nl-NL 西班牙语：ca-ca 斯洛伐克语：sk-SK<br />
+                      <br />
+                  </p>
+            </div>
+          </td>
+          <td width="3%" class="error"></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<div align="center"> 
+  <hr noshade>
+  <div align="left"><a href="http://www.aspxcn.com.cn"><font color="#000000"><span style="font-family: Arial"><span style="font-size: 12pt">&copy;</span> </span>2003-2009 DotNetTextBox&#8482; v6.0 DotNet中华网版权所有</font></a></div>
+</div>
+</body>
+</html>

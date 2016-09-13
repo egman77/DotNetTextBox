@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>使用向导</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+td {  font-family:"宋体","Verdana"; font-size: 9pt}
+.highlight {  background-color: #000000; color: #FFFFFF}body {
+	font-size: 9pt;
+}
+hr {
+	border: dotted #333333;
+
+}
+table {
+	font-size: 9pt;
+}
+pre.syntax span.lang
+{
+	margin: 0;
+	font-weight: normal;
+	
+}
+a:link {color:#000000;text-decoration :none}
+a:visited {color:#000000;text-decoration :none}
+a:hover {color:#507CD1;text-decoration :none;position: relative; left: 1px; top: 1px; clip:  rect(   )}
+a.nomove:link {color:#000000;text-decoration :none}
+a.nomove:visited {color:#000000;text-decoration :none}
+a.nomove:hover {color:#507CD1;text-decoration :none;position: relative; left: 0px; top: 0px; clip:  rect(   )}
+.STYLE1 {color: #FF0000}
+</style>
+</head>
+<body topmargin="5" style="font-size: 9pt" bottommargin="5">
+<table width="100%" border="0" bgcolor="silver" cellspacing="0" cellpadding="0" height="40" align="center">
+    <tr>
+      <td width="9%" align="right" style="height: 60px"><a href="http://aspxcn.com.cn" target=_blank><img src="logo.png" width="260" height="60" border=0px align=baseline></a></td>
+        <td width="91%" colspan="3" align="right" style="height: 60px">&nbsp;</td>
+    </tr>
+</table>
+<br>
+<table width="98%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#333333" id="AutoNumber1" style="BORDER-RIGHT: 1px dotted; BORDER-TOP: 1px dotted; BORDER-LEFT: 1px dotted; BORDER-BOTTOM: 1px dotted; BORDER-COLLAPSE: collapse">
+  <tr> 
+    <td height="85" bgcolor="#efefef"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td class="error" style="width: 3%"><div><br>
+            </div></td>
+          <td width="94%" class="error">
+              
+            <div><b><br>
+                  </b> <img src="url.gif" width="16" height="16" style="font-weight: bold"><strong> </strong>
+                DotNetTextBox控件<font color="#000000">使用向导</font>
+                  <hr noshade>
+                  
+            </div>
+              <strong>本机调试方法</strong>
+              <br />
+              <ul>
+                  <li>下载解压DotNetTextBox后，直接打开根目录的DotNetTextBox.sln项目文件，即可在VS2005环境中直接进行属性设置及调试。
+                      <br />
+                      <br />
+                  </li>
+                  <li>也可以将DotNetTextBox目录解压到默认站点的根目录后，在Internet信息服务管理器找到该目录后右击属性&gt;创建&gt;确定来创 建虚拟目录，也可以在Internet信息服务管理器直接新建一个名叫DotNetTextBox的虚拟目录并指向该目录。设置好后浏览器直
+                      接输入http://localhost/DotNetTextBox/default.htm就可进入相应的演示页面。<br />
+                      <br />
+                  </li>
+                  <li>如果浏览页面时出现"/"应用程序中的服务器错误并提示未设置为虚拟目录，请在Internet信息服务管理器中找到 DotNetTextBox目录并右击属性&gt;创建&gt;确定，即可创建该目录的虚拟目录。
+                  </li>
+              </ul>
+              <strong>控件调用说明</strong>
+              <ul>
+                  <li>
+                      <p>
+                          1.直接在ASPX页面引用控件的话，请将DotNetTextBox.dll复制到页面所在项目的bin目录下，并在页面顶部添加：
+                          <br />
+                          &lt;%@Register TagPrefix="dntb" Namespace="DotNetTextBox" Assembly="DotNetTextBox"%&gt;<br />
+                          在需要加入控件的地方添加：<br />
+                          &lt;DNTB:WebEditor id="控件ID" Skin="设置皮肤文件夹的相对路径" systemfolder="设置系统文件夹的相对路径" runat="server"&gt;&lt;/DNTB:WebEditor&gt;
+                      </p>
+                      <p>
+                          2.路径的设置也可在项目web.config的&lt;appSettings&gt;配置节里直接添加全局的路径设置,这样该项目下所有页面的控件调用都不用单独设置上述两个路径!web.config设置如下:<br />
+                          &lt;appSettings&gt;<br />
+                          &lt;!--设置system目录的相对路径,请相对于web.config文件所在的目录--&gt;<br />
+                          &lt;add key="systemfolder" value="system_dntb/" /&gt;</p>
+                      <p>
+                          &lt;!--设置皮肤目录的相对路径,请相对于system_dntb目录--&gt;<br />
+                          &lt;add key="skin" value="skin/xp/" /&gt;<br />
+                          &lt;/appSettings&gt;</p>
+                      <p>
+                          3.VS2005编辑器中可通过工具&gt;选择工具箱项&gt;.NET Framework组件&gt;浏览并选定DotNetTextBox.dll后按确定控件将默认显示在VS2005编辑器工具箱的常规选项卡(可自行将控件拉到标准选项卡中)，也可以直接在工具箱的标准选项卡列标头或所属列任何控件上右击&gt;选择项&gt;
+                          .NET Framework组件&gt;浏览并选定DotNetTextBox.dll后即可直接将控件加入标准选项卡。这样以后只要在常规选项卡或标准选项卡中将WebEditor控件直接拖放到项目的设计页面即可完成控件的调用。</p>
+                      <p>
+                          4.将system_dntb目录拷贝到所在项目里。<br />
+                          <br />
+                          5.将控件bin目录里的Word_dntb.dll,WordPlugin.dll拷贝到项目BIN目录里（如果不需要Word导入功能，删除system_dntb目录里的importword.aspx就可以不需要拷贝这两个DLL文件）</p>
+                  </li>
+              </ul>
+              <strong>注意事项</strong>
+              <ul>
+                  <li>运行演示页面前请先将DotNetTextBox目录设置为虚拟目录,并确保BIN目录下有DotNetTextBox.dll文件存在,否则运行将失败,设置好后通过浏览http://localhost/dotnettextbox/<span
+                      style="color: #000000">default.htm访问。</span><br />
+                      <br />
+                  </li>
+                  <li>请在每个引用控件的页面中通过在Page指令或Web.Config配置节中设置validateRequest=false禁用请求验证以使DotNetTextBox运行正常。
+                  </li>
+              </ul>
+          </td>
+          <td width="3%" class="error"></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<div align="center"> 
+  <hr noshade>
+  <div align="left"><a href="http://www.aspxcn.com.cn"><font color="#000000"><span style="font-family: Arial"><span style="font-size: 12pt">&copy;</span> </span>2003-2009 DotNetTextBox&#8482; v6.0 DotNet中华网版权所有</font></a></div>
+</div>
+</body>
+</html>

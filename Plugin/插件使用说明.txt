@@ -1,0 +1,53 @@
+[第三方插件使用说明(不开源)]
+
+1)CodeHighlighter插件
+第三方的高亮代码功能插件,比控件内置高亮代码功能提供更多支持的代码及上传代码功能!
+
+插件安装方法:
+直接把CodeHighlighter目录里的文件及目录按原结构拷贝到DotNetTextBox控件所在网站的根目录,并且确认覆盖控件system_dntb目录里的文件即可,另外web.config文件可不用拷贝,但必须在控件项目的web.config中增加如下配置节(system.web配置节外)
+<?xml version="1.0"?>
+<configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">
+	<!--配置代码高亮插件-->
+	<configSections>
+		<section name="codeHighlighter" requirePermission="false" type="ActiproSoftware.CodeHighlighter.CodeHighlighterConfigurationSectionHandler, ActiproSoftware.CodeHighlighter.Net20"/>
+	</configSections>
+	<!--定义代码高亮插件-->
+	<codeHighlighter>
+		<cache languageTimeout="3"/>
+		<keywordLinking enabled="true" target="_blank" defaultKeywordCollectionKey="ActiproKeywords">
+			<keywordCollection key="ActiproKeywords">
+				<explicitKeyword tokenKey="IdentifierToken" patternValue="Actipro" url="http://www.actiprosoftware.com" caseSensitive="false"/>
+				<explicitKeyword tokenKey="IdentifierToken" patternValue="CodeHighlighter" url="http://www.codehighlighter.com" caseSensitive="false"/>
+			</keywordCollection>
+		</keywordLinking>
+		<languages>
+			<language key="Assembly" definitionPath="~/system_dntb/Lexers/ActiproSoftware.Assembly.xml"/>
+			<language key="BatchFile" definitionPath="~/system_dntb/Lexers/ActiproSoftware.BatchFile.xml"/>
+			<language key="C#" definitionPath="~/system_dntb/Lexers/ActiproSoftware.CSharp.xml"/>
+			<language key="CSS" definitionPath="~/system_dntb/Lexers/ActiproSoftware.CSS.xml"/>
+			<language key="HTML" definitionPath="~/system_dntb/Lexers/ActiproSoftware.HTML.xml"/>
+			<language key="INIFile" definitionPath="~/system_dntb/Lexers/ActiproSoftware.INIFile.xml"/>
+			<language key="Java" definitionPath="~/system_dntb/Lexers/ActiproSoftware.Java.xml"/>
+			<language key="JScript" definitionPath="~/system_dntb/Lexers/ActiproSoftware.JScript.xml"/>
+			<language key="Lua" definitionPath="~/system_dntb/Lexers/ActiproSoftware.Lua.xml"/>
+			<language key="MSIL" definitionPath="~/system_dntb/Lexers/ActiproSoftware.MSIL.xml"/>
+			<language key="Pascal" definitionPath="~/system_dntb/Lexers/ActiproSoftware.Pascal.xml"/>
+			<language key="Perl" definitionPath="~/system_dntb/Lexers/ActiproSoftware.Perl.xml"/>
+			<language key="PHP" definitionPath="~/system_dntb/Lexers/ActiproSoftware.PHP.xml"/>
+			<language key="PowerShell" definitionPath="~/system_dntb/Lexers/ActiproSoftware.PowerShell.xml"/>
+			<language key="Python" definitionPath="~/system_dntb/Lexers/ActiproSoftware.Python.xml"/>
+			<language key="SQL" definitionPath="~/system_dntb/Lexers/ActiproSoftware.SQL.xml"/>
+			<language key="VB.NET" definitionPath="~/system_dntb/Lexers/ActiproSoftware.VBDotNet.xml"/>
+			<language key="VBScript" definitionPath="~/system_dntb/Lexers/ActiproSoftware.VBScript.xml"/>
+			<language key="XAML" definitionPath="~/system_dntb/Lexers/ActiproSoftware.XAML.xml"/>
+			<language key="XML" definitionPath="~/system_dntb/Lexers/ActiproSoftware.XML.xml"/>
+		</languages>
+		<lineNumberMargin foreColor="Teal" paddingCharacter=" " visible="true"/>
+		<outlining enabled="true" imagesPath="~/system_dntb/OutliningIndicators/"/>
+		<spacesInTabs count="4"/>
+	</codeHighlighter>
+</configuration>
+
+
+2)EnvDTE.dll
+如果虚拟主机运行控件出现Could not load file or assembly 'EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'的错误,那么将envdte目录下的envdte.dll放置到控件所在项目的BIN目录.

@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>作者简介</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+td {  font-family:"宋体","Verdana"; font-size: 9pt}
+.highlight {  background-color: #000000; color: #FFFFFF}body {
+	font-size: 9pt;
+}
+hr {
+	border: dotted #333333;
+
+}
+table {
+	font-size: 9pt;
+}
+pre.syntax span.lang
+{
+	margin: 0;
+	font-weight: normal;
+	
+}
+a:link {color:#000000;text-decoration :none}
+a:visited {color:#000000;text-decoration :none}
+a:hover {color:#507CD1;text-decoration :none;position: relative; left: 1px; top: 1px; clip:  rect(   )}
+a.nomove:link {color:#000000;text-decoration :none}
+a.nomove:visited {color:#000000;text-decoration :none}
+a.nomove:hover {color:#507CD1;text-decoration :none;position: relative; left: 0px; top: 0px; clip:  rect(   )}
+.STYLE1 {color: #000000}
+</style>
+</head>
+<body topmargin="5" style="font-size: 9pt" bottommargin="5">
+<table width="100%" border="0" bgcolor="silver" cellspacing="0" cellpadding="0" height="40" align="center">
+    <tr>
+      <td width="9%" align="right" style="height: 60px"><a href="http://aspxcn.com.cn" target=_blank><img src="logo.png" width="260" height="60" border=0px align=baseline></a></td>
+        <td width="91%" colspan="3" align="right" style="height: 60px">&nbsp;</td>
+    </tr>
+</table>
+<br>
+<table width="98%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#333333" id="AutoNumber1" style="BORDER-RIGHT: 1px dotted; BORDER-TOP: 1px dotted; BORDER-LEFT: 1px dotted; BORDER-BOTTOM: 1px dotted; BORDER-COLLAPSE: collapse">
+  <tr> 
+    <td height="85" bgcolor="#efefef"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="3%" class="error"><div><br>
+            </div></td>
+          <td width="94%" class="error">
+              
+            <div><b><br>
+                  </b>
+                <img height="16" src="url.gif" style="font-weight: bold"
+                    width="16" /><strong> </strong>DotNetTextBox控件常见问题FAQ(定期更新)
+                <hr align="center" size="1" style="border-left-color: #999999; border-bottom-color: #999999;
+                    width: 99%; border-top-style: dashed; border-top-color: #999999; border-right-style: dashed;
+                    border-left-style: dashed; border-right-color: #999999; border-bottom-style: dashed" />
+                <strong><span style="font-size: 10pt">Q:为什么控件上传图片、上传文件及上传媒体文件等功能无法使用，会出现未能找到路径xxxx的一部分?<br />
+                    <br />
+                </span></strong>A:因为控件在中文目录下使用时上述功能就会出现因获取的上传路径乱码而无法使用，所以暂时请不要在中文网站目录下运行本控件(免费版3.4.6及商业版5.0.4以上版本已修正此BUG)!<br />
+                <span id="Span1"><span style="font-size: 10pt">
+                    <br />
+                    <br />
+                    <strong>Q:为什么控件在ASP.NET Ajax的UpdatePanel里无法工作，会出现提交内容后控件编辑框无法编辑的问题?<br />
+                        <br />
+                    </strong><span style="font-size: 9pt"><span style="font-size: 9pt">A:免费版3.4.7及商业版5.0.5以上版本新增加Asp.Net
+                        Ajax UpdatePanel支持包,请将AjaxSupport目录下的文件及目录按原结构拷贝到原版根目录覆盖相同文件,并且打开DotNetTextBox2005.sln或DotNetTextBox2008.sln重新一次编译项目后即可,新生成的DotNetTextBox.dll将完美支持Asp.Net
+                        Ajax UpdatePanel!!<br />
+                    </span></span>
+                    <br />
+                    <br />
+                    <strong>Q:控件支持提交时自动获取编辑器内容里的图片地址以作新闻首页图片显示吗?<br />
+                        <br />
+                    </strong><span style="font-size: 9pt">A:可以，免费版V3.4.5或商业版本已经支持提交时以代码Webeditor1.GetImagesUrl[图片序号].ToString()这样的方式来获取内容里的相应出现顺序的图片地址!<br />
+                    </span>
+                    <br />
+                    <br />
+                    <strong>
+            Q:为什么本地测试成功,但上传到虚拟空间却出现Could not load
+                    file or assembly 'EnvDTE,Version=8.0.0.0,Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'的错误?<br />
+                    </strong>
+                </span>
+                    <br />
+                A:因为虚拟空间没有控件需要引用到的一个名为EnvDTE的Vs2005组件,请把Plugin.rar里envdte/envdte.dll拷贝到虚拟空间主机的BIN目录里即可!<br />
+                    <br />
+                    <br />
+                    <strong><span style="font-size: 10pt">Q:使用控件上传功能时,为什么会出现"存储空间不足，无法完成此操作"的错误?&nbsp;<br />
+                    </span>
+                        <br />
+                    </strong>
+                    A:那可能 是因为你的IE缓存不够了,请右键IE，选属性，删除所有文件（脱机文件），删除所有COOKIES,也可能是asp.net没有写入权限引起的问题!<br />
+                    <br />
+                    <br />
+                    <strong><span style="font-size: 10pt">
+                    Q:控件能不能输出符合XHTML1.0规范的网页代码?<br />
+                    </span>
+                        <br />
+                    </strong>A:v6.0商业版提供一个xhtml属性,只要将属性设置为Xhtml=Client(即时转换)或Xhtml=Server(提交内容时转换)就可以让控件即时或在输出内容的时候将所有代码转换为符合XHTML1.0格式规范的网页代码。<br />
+                    <br />
+                    <br />
+                    <span style="font-size: 10pt"><strong>
+            Q:为什么会出现使用主题 css 文件要求页上有标头控件。(例如 &lt;head runat="server" /&gt;)的错误?<br />
+                        <br />
+                    </strong></span>
+                    A:因为引用控件的页面或功能页面使用了App_Themes目录下的全局CSS样式主题，解决步骤:引用控件的页面直接把&lt;head&gt;改为&lt;head
+                    runat="server" /&gt;，然后在控件system_dntb目录里添加一个Web.config文件,并且在&lt;system.web&gt;配置节中加入
+                    :&lt;pages theme="" /&gt;即可,这样所有的功能页面都将自动禁用ASP.NET2.0的主题(PS:因为功能页面将&lt;head&gt;改为&lt;head
+                    runat="server"/&gt;会出错的，所以只能直接禁用主题)，而且system_dntb目录以外的其它页面或其它目录都可正常使用全局的CSS主题。<br />
+                    <br />
+                    <br />
+                    <strong><span style="font-size: 10pt">Q:全部内置功能的DotNetTextBox控件太宽了,能不能在保持同样功能的情况下,将宽度缩小?<br />
+                    </span>
+                        <br />
+                    </strong>A:可以,如果需要缩小宽度,使用&lt;topmenu&gt;br&lt;/topmenu&gt;强制换行标记让一行的菜单排列换行为两行或三行甚至更多即可,另外也可以将部分菜单功能定义到左侧工具栏或底部工具栏。<br />
+                    <br />
+                    <br />
+                    <strong><span style="font-size: 10pt">
+                    Q:为什么在VS2005中添加控件之后页面提示找不到en-us目录或找不到xxxxx.config文件的路径错误?<br />
+                    </span>
+                        <br />
+                    </strong>A:请确定是否已经将控件所需要的system_dntb目录拷贝到你的项目中,并且正确设置systemfolder属性的正确的相对路径(路径设置方法请看帮助文档中的路径设置一文)。<br />
+                    <br />
+                    <br />
+                    <strong><span style="font-size: 10pt">
+              Q:为什么已经正确设置系统路径，但仍然提示找不到路径?<br />
+                    </span>
+                        <br />
+                    </strong>
+            A:请确定是否有同时打开多个项目，如果已打开一个项目之后再同时打开引用控件的项目，会出现路径错误的问题，请在打开引用控件的项目之前，先关闭其它已经打开的项目。<br />
+                    <br />
+                    <br />
+                    <strong><span style="font-size: 10pt">Q:为什么我编译项目时会出现找不到Word_dntb加载项?<br />
+                    </span>
+                        <br />
+                    </strong>A:因为控件的Word导入功能采用插件方式提供，所以还需将控件bin目录里的Word_dntb.dll,WordPlugin.dll拷贝到项目BIN目录里（如果不需要Word导入功能，删除system_dntb目录里的importword.aspx就可以不需要拷贝这两个DLL文件）!<br />
+                    <br />
+                    <br />
+                    <strong><span style="font-size: 10pt">
+              Q:为什么我设置了全局的系统目录设置,但是不起效?<br />
+                    </span>
+                        <br />
+                    </strong>
+              A:设置全局部的系统目录设置后,引用页面的控件原来的systemfolder属性请去掉,因为页面会优先使用内置属性的路径设置!<br />
+                    <br />
+                    <br />
+                    <strong><span style="font-size: 10pt">
+              Q:我想将upload文件夹放置在system_dntb目录外,我应该如何设置?<br />
+                    </span>
+                        <br />
+                    </strong>
+                A:设置UploadFolder属性,默认值为upload/,即上传文件都放置在system_dntb/upload/,如果你需要将upload文件夹放到system_dntb目录外,请设置为../upload/即可。<br />
+                    <br />
+                    <br />
+                    <strong><span style="font-size: 10pt">
+                Q:为什么我配置里已经设置单个文件限制大于4M了，但上传的文件超过4M仍然会出现上传不成功?<br />
+                    </span>
+                        <br />
+                    </strong>
+            A:因为ASP.NET上传的默认限制是4M，所以要上传大于4M的文件还要在web.config里的&lt;system.web&gt;配置节添加：<br />
+                    <br />
+            &lt;!--设置上传单个文件的最大Size--&gt;<br />
+&lt;httpRuntime maxRequestLength=&quot;10240&quot; executionTimeout=&quot;3600&quot;/&gt;<br />
+                    <br />
+              其中maxRequestLength为上传的最大限制，10240=10M executionTimeout为传输超时的时间!<br />
+                    <br />
+                    <br />
+                    <strong><span style="font-size: 10pt">
+              Q:什么叫相对路径(Relative)、绝对根路径(AbsoluteRoot)、绝对全路径(AbsoluteFull)?<br />
+                    </span>
+                        <br />
+                    </strong>
+                    A: 相对路径如：system_dntb/upload/xx.gif、绝对根路径如：/dotnettextbox/system_dntb/upload/xx.gif、绝对全路径如：<a
+                        href="http://localhost/dotnettextbox/system_dntb/upload/xx.gif" style="color: #507cd1"
+                        target="_blank" title="点击打开超链接"><span style="text-decoration: underline">http://localhost/dotnettextbox/system_dntb/upload/xx.gif</span></a>，这些路径形式可通过控件PathType内置属性自由切换！<br />
+                    <br />
+                    <br />
+                    如还有遇到任何问题,请加入.NET2.0技术讨论QQ群：6464466,12462711 进行反馈,谢谢!</span></div>
+          </td>
+          <td width="3%" class="error"></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<div align="center"> 
+  <hr noshade>
+  <div align="left"><a href="http://www.aspxcn.com.cn"><font color="#000000"><span style="font-family: Arial"><span style="font-size: 12pt">&copy;</span> </span>2003-2009 DotNetTextBox&#8482; v6.0 DotNet中华网版权所有</font></a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<html>
+<head>
+<title>配置上传功能</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+td {  font-family:"宋体","Verdana"; font-size: 9pt}
+.highlight {  background-color: #000000; color: #FFFFFF}body {
+	font-size: 9pt;
+}
+hr {
+	border: dotted #333333;
+
+}
+table {
+	font-size: 9pt;
+}
+pre.syntax span.lang
+{
+	margin: 0;
+	font-weight: normal;
+	
+}
+a:link {color:#000000;text-decoration :none}
+a:visited {color:#000000;text-decoration :none}
+a:hover {color:#507CD1;text-decoration :none;position: relative; left: 1px; top: 1px; clip:  rect(   )}
+a.nomove:link {color:#000000;text-decoration :none}
+a.nomove:visited {color:#000000;text-decoration :none}
+a.nomove:hover {color:#507CD1;text-decoration :none;position: relative; left: 0px; top: 0px; clip:  rect(   )}
+</style>
+</head>
+<body topmargin="5" style="font-size: 9pt" bottommargin="5">
+<table width="100%" border="0" bgcolor="silver" cellspacing="0" cellpadding="0" height="40" align="center">
+    <tr>
+      <td width="9%" align="right" style="height: 60px"><a href="http://aspxcn.com.cn" target=_blank><img src="logo.png" width="260" height="60" border=0px align=baseline></a></td>
+        <td width="91%" colspan="3" align="right" style="height: 60px">&nbsp;</td>
+    </tr>
+</table>
+<br>
+<table width="98%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#333333" id="AutoNumber1" style="BORDER-RIGHT: 1px dotted; BORDER-TOP: 1px dotted; BORDER-LEFT: 1px dotted; BORDER-BOTTOM: 1px dotted; BORDER-COLLAPSE: collapse">
+  <tr> 
+    <td height="85" bgcolor="#efefef"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="3%" class="error"><div><br>
+            </div></td>
+          <td width="94%" class="error">
+              
+            <div><b><br>
+                  </b> <img src="url.gif" width="16" height="16" style="font-weight: bold"><strong> </strong>
+                DotNetTextBox控件<font color="#000000">配置上传功能</font>
+                  <hr noshade>
+                  <p>
+                      注:免费版开源版Ver3.3.4以后版本可使用Wizard.aspx在线可视化设置向导来配置该功能!<br />
+                      <br />
+                      一、配置向导</p>
+                  <p>第一步:打开system_dntb/uploadconfig/default.config文件,请按相应注释进行设置,配置文件如下:</p>
+                <div style="border-right: #cccccc 1px solid; padding-right: 5px; border-top: #cccccc 1px solid;
+                    padding-left: 4px; font-size: 13px; padding-bottom: 4px; border-left: #cccccc 1px solid;
+                    width: 98%; word-break: break-all; padding-top: 4px; border-bottom: #cccccc 1px solid;
+                    background-color: #ffffff">
+                    <div>
+                        <span style="color: #0000ff">
+                            <div>
+                            </div>
+                                <span style="color: #0000ff">&lt;?</span><span style="color: #ff00ff">xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; </span><span style="color: #0000ff">?&gt;</span><span
+                                        style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">configuration</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                        </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">设置上传文件夹的最大可用空间(单位KB)</span><span
+                                            style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">maxAllUploadSize</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #000000">20480</span><span
+                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">maxAllUploadSize</span><span
+                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                            <br />
+                                                        </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">设置上传文件单个的最大尺寸(单位KB)</span><span
+                                                            style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">maxSingleUploadSize</span><span
+                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">1024</span><span style="color: #0000ff">&lt;/</span><span
+                                                                    style="color: #800000">maxSingleUploadSize</span><span style="color: #0000ff">&gt;</span><span
+                                                                        style="color: #000000"><br />
+                                                                        <br />
+                                                                    </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">设置上传文件是否自动改名</span><span
+                                                                        style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">autoname</span><span
+                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">false</span><span
+                                                                                style="color: #0000ff">&lt;/</span><span style="color: #800000">autoname</span><span
+                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                        <br />
+                                                                                    </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">设置是否允许上传</span><span
+                                                                                        style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">allowUpload</span><span
+                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">true</span><span style="color: #0000ff">&lt;/</span><span
+                                                                                                style="color: #800000">allowUpload</span><span style="color: #0000ff">&gt;</span><span
+                                                                                                    style="color: #000000"><br />
+                                                                                                    <br />
+                                                                                                </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">是否在上传界面启用水印控制on为开启，off为关闭</span><span
+                                                                                                    style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">watermarkOption</span><span
+                                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000">on</span><span style="color: #0000ff">&lt;/</span><span
+                                                                                                            style="color: #800000">watermarkOption</span><span style="color: #0000ff">&gt;</span><span
+                                                                                                                style="color: #000000"><br />
+                                                                                                                <br />
+                                                                                                            </span>
+                                <span style="color: #008000">&lt;!--</span><span style="color: #008000">是否启用上传图片的文字水印</span><span
+                                    style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">watermark</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000">true</span><span style="color: #0000ff">&lt;/</span><span
+                                            style="color: #800000">watermark</span><span style="color: #0000ff">&gt;</span><span
+                                                style="color: #000000"><br />
+                                                <br />
+                                            </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">开启文字水印后是否保留原件并新建副本,false为不新建,false以外的字符则新建副本,副本名称以该字符加原文件名命名</span><span
+                                                style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">watermarkName</span><span
+                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">false</span><span
+                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">watermarkName</span><span
+                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                <br />
+                                                            </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">设置水印文字</span><span
+                                                                style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">watermarkText</span><span
+                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">http://www.aspxcn.com.cn</span><span
+                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">watermarkText</span><span
+                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                <br />
+                                                                            </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">是否启用上传图片的图片水印</span><span
+                                                                                style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">watermarkImages</span><span
+                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">false</span><span
+                                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">watermarkImages</span><span
+                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                <br />
+                                                                                            </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">开启图片水印后是否保留原件并新建副本,false为不新建,false以外的字符则新建副本,副本名称以该字符加原文件名命名</span><span
+                                                                                                style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">watermarkImagesName</span><span
+                                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">false</span><span
+                                                                                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">watermarkImagesName</span><span
+                                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                                <br />
+                                                                                                            </span>
+                                <span style="color: #008000">&lt;!--</span><span style="color: #008000">设置图片水印所在的位置</span><span
+                                    style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">watermarkImages_path</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000">img/aspnet2.GIF</span><span
+                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">watermarkImages_path</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                    <br />
+                                                </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">是否启用缩略图</span><span
+                                                    style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">smallImages</span><span
+                                                        style="color: #0000ff">&gt;</span><span style="color: #000000">false</span><span
+                                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">smallImages</span><span
+                                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                    <br />
+                                                                </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">开启缩略图后是否保留原件并新建副本,false为不新建,false以外的字符则新建副本,副本名称以该字符加原文件名命名</span><span
+                                                                    style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">smallImagesName</span><span
+                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000">false</span><span
+                                                                            style="color: #0000ff">&lt;/</span><span style="color: #800000">smallImagesName</span><span
+                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                    <br />
+                                                                                </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">缩略图缩放类型,HW:指定高宽缩放(可能变形)。W:指定宽，高按比例。H:指定高，宽按比例。Cut:指定高宽裁减(不变形)</span><span
+                                                                                    style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">smallImagesType</span><span
+                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000">HW</span><span style="color: #0000ff">&lt;/</span><span
+                                                                                            style="color: #800000">smallImagesType</span><span style="color: #0000ff">&gt;</span><span
+                                                                                                style="color: #000000"><br />
+                                                                                                <br />
+                                                                                            </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">缩略图宽度</span><span
+                                                                                                style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">smallImagesW</span><span
+                                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">150</span><span style="color: #0000ff">&lt;/</span><span
+                                                                                                        style="color: #800000">smallImagesW</span><span style="color: #0000ff">&gt;</span><span
+                                                                                                            style="color: #000000"><br />
+                                                                                                            <br />
+                                                                                                        </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">缩略图高度</span><span
+                                                                                                            style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                                            </span>
+                                <span style="color: #0000ff">&lt;</span><span style="color: #800000">smallImagesH</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000">150</span><span style="color: #0000ff">&lt;/</span><span
+                                        style="color: #800000">smallImagesH</span><span style="color: #0000ff">&gt;</span><span
+                                            style="color: #000000"><br />
+                                            <br />
+                                        </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">是否允许删除文件</span><span
+                                            style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">delete</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #000000">true</span><span style="color: #0000ff">&lt;/</span><span
+                                                    style="color: #800000">delete</span><span style="color: #0000ff">&gt;</span><span
+                                                        style="color: #000000"><br />
+                                                        <br />
+                                                    </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">是否允许文件重命名</span><span
+                                                        style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">edit</span><span
+                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">true</span><span style="color: #0000ff">&lt;/</span><span
+                                                                style="color: #800000">edit</span><span style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                    <br />
+                                                                </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">是否允许创建文件夹</span><span
+                                                                    style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">folder</span><span
+                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000">true</span><span style="color: #0000ff">&lt;/</span><span
+                                                                            style="color: #800000">folder</span><span style="color: #0000ff">&gt;</span><span
+                                                                                style="color: #000000"><br />
+                                                                                <br />
+                                                                            </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">是否启用文件列表</span><span
+                                                                                style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">fileListBox</span><span
+                                                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">true</span><span style="color: #0000ff">&lt;/</span><span
+                                                                                        style="color: #800000">fileListBox</span><span style="color: #0000ff">&gt;</span><span
+                                                                                            style="color: #000000"><br />
+                                                                                            <br />
+                                                                                        </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">是否启用图像属性(v6.0版本新增配置)</span><span
+                                                                                            style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">imageAttribute</span><span
+                                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">true</span><span style="color: #0000ff">&lt;/</span><span
+                                                                                                    style="color: #800000">imageAttribute</span><span style="color: #0000ff">&gt;</span><span
+                                                                                                        style="color: #000000"><br />
+                                                                                                        <br />
+                                                                                                    </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">默认是收缩或展开文件列表(V6.0版本新增,show是展开,hide是收缩)</span><span
+                                                                                                        style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">fileListView</span><span
+                                                                                                            style="color: #0000ff">&gt;</span><span style="color: #000000">show</span><span style="color: #0000ff">&lt;/</span><span
+                                                                                                                style="color: #800000">fileListView</span><span style="color: #0000ff">&gt;</span><span
+                                                                                                                    style="color: #000000"><br />
+                                                                                                                    <br />
+                                                                                                                </span>
+                                <span style="color: #008000">&lt;!--</span><span style="color: #008000">默认是收缩或展开图像属性(V6.0版本新增,show是展开,hide是收缩)</span><span
+                                    style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">imageAttributeView</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000">show</span><span style="color: #0000ff">&lt;/</span><span
+                                            style="color: #800000">imageAttributeView</span><span style="color: #0000ff">&gt;</span><span
+                                                style="color: #000000"><br />
+                                                <br />
+                                            </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">最大同时上传文件数(V6.0版本新增)</span><span
+                                                style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">maxUpload</span><span
+                                                    style="color: #0000ff">&gt;</span><span style="color: #000000">10</span><span style="color: #0000ff">&lt;/</span><span
+                                                        style="color: #800000">maxUpload</span><span style="color: #0000ff">&gt;</span><span
+                                                            style="color: #000000"><br />
+                                                            <br />
+                                                        </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">上传文件功能可上传的文件类型</span><span
+                                                            style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">fileFilters</span><span
+                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">rar,zip,pdf,txt</span><span
+                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">fileFilters</span><span
+                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                            <br />
+                                                                        </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">上传图片功能可上传的文件类型</span><span
+                                                                            style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">imagesFilters</span><span
+                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">jpg,gif,png</span><span
+                                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">imagesFilters</span><span
+                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                            <br />
+                                                                                        </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">上传自动播放文件功能可上传的文件类型</span><span
+                                                                                            style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">mediaFilters</span><span
+                                                                                                style="color: #0000ff">&gt;</span><span style="color: #000000">wmv,rm,rmvb,asf,wma,mpg,mp3,swf,flv</span><span
+                                                                                                    style="color: #0000ff">&lt;/</span><span style="color: #800000">mediaFilters</span><span
+                                                                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                                            <br />
+                                                                                                        </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">上传模板功能可上传的文件类型</span><span
+                                                                                                            style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                                                                            </span>
+                                <span style="color: #0000ff">&lt;</span><span style="color: #800000">templateFilters</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000">html,htm</span><span
+                                        style="color: #0000ff">&lt;/</span><span style="color: #800000">templateFilters</span><span
+                                            style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                            </span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">configuration</span><span
+                                                style="color: #0000ff">&gt;</span>
+                        </span></div>
+                </div>
+            </div>
+                  <p>第二步:设置控件UploadConfig属性，指定配置文件的存放路径，控件默认指向default.config。</p>
+                  <p>第三步:设置控件UploadFolder属性，指定上传文件的存放文件夹，控件默认upload/(相对于system文件夹,即实际上传路径为system_dntb/upload/)。<br />
+                      <br />
+                第四步:设置控件UploadFolderSize属性，指定上传文件夹的空间大小。如果为0,则由上传配置文件决定空间大小。<br />
+                <br />
+                  </p>
+              </DIV></td>
+          <td width="3%" class="error"></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<div align="center"> 
+  <hr noshade>
+  <div align="left"><a href="http://www.aspxcn.com.cn"><font color="#000000"><span style="font-family: Arial"><span style="font-size: 12pt">&copy;</span> </span>2003-2009 DotNetTextBox&#8482; v6.0 DotNet中华网版权所有</font></a></div>
+</div>
+</body>
+</html>

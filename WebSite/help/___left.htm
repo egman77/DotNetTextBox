@@ -1,0 +1,42 @@
+<html>
+<head>
+<link rel="StyleSheet" href="___dtree.css" type="text/css" />
+<script type="text/javascript" src="___dtree.js"></script>
+</head>
+<body>
+<div class="dtree">
+<p><a href="javascript: d.openAll();">全部展开</a> | <a href="javascript: d.closeAll();">全部折叠</a></p>
+<script type="text/javascript"><!--
+d = new dTree("d");
+        d.add(0,-1,"使用帮助.chm","");
+d.add(1,0,"版本简介","版本简介.htm");
+d.add(2,0,"使用向导","使用向导.htm");
+d.add(3,0,"属性列表","属性列表.htm");
+d.add(4,0,"使用技巧","");
+d.add(5,4,"属性设置","属性设置.htm");
+d.add(6,4,"路径设置","控件必须目录的路径设置.htm");
+d.add(7,4,"配置在线编辑功能","配置在线编辑功能.htm");
+d.add(8,4,"配置上传功能","配置上传功能.htm");
+d.add(9,4,"配置右键菜单","配置右键菜单.htm");
+d.add(10,4,"配置可隐藏菜单","配置可隐藏菜单.htm");
+d.add(11,4,"配置Web.config","Web.Config的配置.htm");
+d.add(12,4,"全部编辑功能列表","所有在线编辑功能列表.htm");
+d.add(13,4,"制作语言文件","制作语言文件.htm");
+d.add(14,4,"皮肤制作说明","制作皮肤.htm");
+d.add(15,4,"脚本命令列表","脚本命令列表.htm");
+d.add(16,0,"常见问题FAQ","常见问题.htm");
+d.add(17,0,"商业版购买","购买商业版.htm");
+d.add(18,0,"作者简介","作者简介.htm");
+
+document.write(d);
+document.getElementById("sd2").click();
+//-->
+</script>
+</div>
+<p \><hr size="1" \>
+    <span style="font-size: 11px; color: #666; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif">
+        DotNetTextBox在线帮助系统<br />
+        http://www.aspxcn.com.cn</span>
+</body>
+</html>
+                 

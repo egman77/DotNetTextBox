@@ -1,0 +1,4 @@
+E:\hdh_git_workspaces\DotNetTextBoxV6\DotNetTextBox\bin\DotNetTextBox.dll
+E:\hdh_git_workspaces\DotNetTextBoxV6\DotNetTextBox\obj\Release\DotNetTextBox2008.csprojResolveAssemblyReference.cache
+E:\hdh_git_workspaces\DotNetTextBoxV6\DotNetTextBox\obj\Release\DotNetTextBox2008.csproj.ResolveComReference.cache
+E:\hdh_git_workspaces\DotNetTextBoxV6\DotNetTextBox\obj\Release\DotNetTextBox.dll

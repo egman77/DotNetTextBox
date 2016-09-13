@@ -1,0 +1,283 @@
+<html>
+<head>
+<title>控件内置属性列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+td {  font-family:"宋体","Verdana"; font-size: 9pt}
+.highlight {  background-color: #000000; color: #FFFFFF}body {
+	font-size: 9pt;
+}
+hr {
+	border: dotted #333333;
+
+}
+table {
+	font-size: 9pt;
+}
+pre.syntax span.lang
+{
+	margin: 0;
+	font-weight: normal;
+	
+}
+a:link {color:#000000;text-decoration :none}
+a:visited {color:#000000;text-decoration :none}
+a:hover {color:#507CD1;text-decoration :none;position: relative; left: 1px; top: 1px; clip:  rect(   )}
+a.nomove:link {color:#000000;text-decoration :none}
+a.nomove:visited {color:#000000;text-decoration :none}
+a.nomove:hover {color:#507CD1;text-decoration :none;position: relative; left: 0px; top: 0px; clip:  rect(   )}
+</style>
+</head>
+<body topmargin="5" style="font-size: 9pt" bottommargin="5">
+<table width="100%" border="0" bgcolor="silver" cellspacing="0" cellpadding="0" height="40" align="center">
+    <tr>
+      <td width="9%" align="right" style="height: 60px"><a href="http://aspxcn.com.cn" target=_blank><img src="logo.png" width="260" height="60" border=0px align=baseline></a></td>
+        <td width="91%" colspan="3" align="right" style="height: 60px">&nbsp;</td>
+    </tr>
+</table>
+<br>
+<table width="98%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#333333" id="AutoNumber1" style="BORDER-RIGHT: 1px dotted; BORDER-TOP: 1px dotted; BORDER-LEFT: 1px dotted; BORDER-BOTTOM: 1px dotted; BORDER-COLLAPSE: collapse">
+  <tr> 
+    <td height="85" bgcolor="#efefef"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="3%" class="error"><div><br>
+            </div></td>
+          <td class="error" style="width: 94%">
+              
+            <div><b><br>
+                  </b> <img src="url.gif" width="16" height="16"> 
+                  DotNetTextBox<font color="#000000">控件的Web.Config配置</font>
+                  <hr noshade>
+                正常使用DotNetTextBox控件的Web.Config配置文件:<br />
+                <div style="border-right: #cccccc 1px solid; padding-right: 5px; border-top: #cccccc 1px solid;
+                    padding-left: 4px; font-size: 13px; padding-bottom: 4px; border-left: #cccccc 1px solid;
+                    width: 98%; word-break: break-all; padding-top: 4px; border-bottom: #cccccc 1px solid;
+                    background-color: #ffffff">
+                    <div>
+                        <span style="color: #0000ff">&lt;?</span><span style="color: #ff00ff">xml version="1.0"</span><span
+                            style="color: #0000ff">?&gt;</span><span style="color: #000000"><br />
+                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">configuration
+                            </span><span style="color: #ff0000">xmlns</span><span style="color: #0000ff">="http://schemas.microsoft.com/.NetConfiguration/v2.0"</span><span
+                                style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">appSettings</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">设置system目录的相对路径,请相对于web.config文件所在的目录(设置这个属性以后,该虚拟目录下所有级别目录页面的控件调用都不用单独设置systemfolder属性,方便项目的整体调用)</span><span
+                                        style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">add </span>
+                        <span style="color: #ff0000">key</span><span style="color: #0000ff">="systemfolder"</span><span
+                            style="color: #ff0000"> value</span><span style="color: #0000ff">="system_dntb/"</span><span
+                                style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">设置皮肤目录的相对路径,请相对于system目录(设置这个属性以后,该虚拟目录下所有级别目录页面的控件调用都不用单独设置skin属性,方便项目的整体调用)</span><span
+                                    style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">add </span>
+                        <span style="color: #ff0000">key</span><span style="color: #0000ff">="skin"</span><span
+                            style="color: #ff0000"> value</span><span style="color: #0000ff">="skin/xp/"</span><span
+                                style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                </span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">appSettings</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">system.web</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">anonymousIdentification
+                                        </span><span style="color: #ff0000">enabled</span><span style="color: #0000ff">="true"</span><span
+                                            style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                            </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">compilation
+                                            </span><span style="color: #ff0000">defaultLanguage</span><span style="color: #0000ff">="C#"</span><span
+                                                style="color: #0000ff">&gt;</span><span style="color: #0000ff">&lt;/</span><span
+                                    style="color: #800000">compilation</span><span style="color: #0000ff">&gt;</span><span
+                                        style="color: #000000"><br />
+                                    </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">设置上传单个文件的最大Size</span><span
+                                        style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">httpRuntime
+                                        </span><span style="color: #ff0000">maxRequestLength</span><span style="color: #0000ff">="10240"</span><span
+                                            style="color: #ff0000"> executionTimeout</span><span style="color: #0000ff">="3600"</span><span
+                                                style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">设置启用js脚本的服务端Gzip压缩</span><span
+                                                    style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                    </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">httpModules</span><span
+                                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                        </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">add </span>
+                        <span style="color: #ff0000">name</span><span style="color: #0000ff">="WebResourceCompression"</span><span
+                            style="color: #ff0000"> type</span><span style="color: #0000ff">="WebResourceCompression.WebResourceCompressionModule"</span><span
+                                style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                </span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">httpModules</span><span
+                                    style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                    </span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">system.web</span><span
+                                        style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                        </span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">configuration</span><span
+                                            style="color: #0000ff">&gt;</span></div>
+                </div>
+            </div>
+              <br />
+              如果要使用第三方的高亮代码插件(Plugin文件夹下的CodeHighlighter插件),还需要为Web.Config配置文件加上:<br />
+              <div style="border-right: #cccccc 1px solid; padding-right: 5px; border-top: #cccccc 1px solid;
+                  padding-left: 4px; font-size: 13px; padding-bottom: 4px; border-left: #cccccc 1px solid;
+                  width: 98%; word-break: break-all; padding-top: 4px; border-bottom: #cccccc 1px solid;
+                  background-color: #ffffff">
+                  <div>
+                      <span style="color: #0000ff">&lt;?</span><span style="color: #ff00ff">xml version="1.0"</span><span
+                          style="color: #0000ff">?&gt;</span><span style="color: #000000"><br />
+                          </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">configuration
+                          </span><span style="color: #ff0000">xmlns</span><span style="color: #0000ff">="http://schemas.microsoft.com/.NetConfiguration/v2.0"</span><span
+                              style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                              </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">配置代码高亮插件</span><span
+                                  style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                  </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">configSections</span><span
+                                      style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                      </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">section
+                                      </span><span style="color: #ff0000">name</span><span style="color: #0000ff">="codeHighlighter"</span><span
+                                          style="color: #ff0000"> requirePermission</span><span style="color: #0000ff">="false"</span><span
+                                              style="color: #ff0000"> type</span><span style="color: #0000ff">="ActiproSoftware.CodeHighlighter.CodeHighlighterConfigurationSectionHandler,
+                                                  ActiproSoftware.CodeHighlighter.Net20"</span><span style="color: #0000ff">/&gt;</span><span
+                                                      style="color: #000000"><br />
+                                                  </span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">configSections</span><span
+                                                      style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                      </span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">system.web</span><span
+                                                          style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                          </span><span style="color: #008000">&lt;!--</span><span style="color: #008000">定义代码高亮插件</span><span
+                                                              style="color: #008000">--&gt;</span><span style="color: #000000"><br />
+                                                              </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">codeHighlighter</span><span
+                                                                  style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                  </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">cache </span>
+                      <span style="color: #ff0000">languageTimeout</span><span style="color: #0000ff">="3"</span><span
+                          style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                          </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">keywordLinking
+                          </span><span style="color: #ff0000">enabled</span><span style="color: #0000ff">="true"</span><span
+                              style="color: #ff0000"> target</span><span style="color: #0000ff">="_blank"</span><span
+                                  style="color: #ff0000"> defaultKeywordCollectionKey</span><span style="color: #0000ff">="ActiproKeywords"</span><span
+                                      style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                      </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">keywordCollection
+                                      </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="ActiproKeywords"</span><span
+                                          style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                          </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">explicitKeyword
+                                          </span><span style="color: #ff0000">tokenKey</span><span style="color: #0000ff">="IdentifierToken"</span><span
+                                              style="color: #ff0000"> patternValue</span><span style="color: #0000ff">="Actipro"</span><span
+                                                  style="color: #ff0000"> url</span><span style="color: #0000ff">="http://www.actiprosoftware.com"</span><span
+                                                      style="color: #ff0000"> caseSensitive</span><span style="color: #0000ff">="false"</span><span
+                                                          style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                          </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">explicitKeyword
+                                                          </span><span style="color: #ff0000">tokenKey</span><span style="color: #0000ff">="IdentifierToken"</span><span
+                                                              style="color: #ff0000"> patternValue</span><span style="color: #0000ff">="CodeHighlighter"</span><span
+                                                                  style="color: #ff0000"> url</span><span style="color: #0000ff">="http://www.codehighlighter.com"</span><span
+                                                                      style="color: #ff0000"> caseSensitive</span><span style="color: #0000ff">="false"</span><span
+                                                                          style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                                          </span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">keywordCollection</span><span
+                                                                              style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                              </span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">keywordLinking</span><span
+                                                                                  style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                  </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">languages</span><span
+                                                                                      style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                      </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                                                                      </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="Assembly"</span><span
+                                                                                          style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.Assembly.xml"</span><span
+                                                                                              style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                                                              </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                                                                              </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="BatchFile"</span><span
+                                                                                                  style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.BatchFile.xml"</span><span
+                                                                                                      style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                                                                      </span>
+                      <span style="color: #0000ff">&lt;</span><span style="color: #800000">language </span>
+                      <span style="color: #ff0000">key</span><span style="color: #0000ff">="C#"</span><span
+                          style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.CSharp.xml"</span><span
+                              style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                              </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                              </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="CSS"</span><span
+                                  style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.CSS.xml"</span><span
+                                      style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                      </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                      </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="HTML"</span><span
+                                          style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.HTML.xml"</span><span
+                                              style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                              </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                              </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="INIFile"</span><span
+                                                  style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.INIFile.xml"</span><span
+                                                      style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                      </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                                      </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="Java"</span><span
+                                                          style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.Java.xml"</span><span
+                                                              style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                              </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                                              </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="JScript"</span><span
+                                                                  style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.JScript.xml"</span><span
+                                                                      style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                                      </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                                                      </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="Lua"</span><span
+                                                                          style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.Lua.xml"</span><span
+                                                                              style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                                              </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                                                              </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="MSIL"</span><span
+                                                                                  style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.MSIL.xml"</span><span
+                                                                                      style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                                                      </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                                                                      </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="Pascal"</span><span
+                                                                                          style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.Pascal.xml"</span><span
+                                                                                              style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                                                              </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                                                                              </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="Perl"</span><span
+                                                                                                  style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.Perl.xml"</span><span
+                                                                                                      style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                                                                      </span>
+                      <span style="color: #0000ff">&lt;</span><span style="color: #800000">language </span>
+                      <span style="color: #ff0000">key</span><span style="color: #0000ff">="PHP"</span><span
+                          style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.PHP.xml"</span><span
+                              style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                              </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                              </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="PowerShell"</span><span
+                                  style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.PowerShell.xml"</span><span
+                                      style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                      </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                      </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="Python"</span><span
+                                          style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.Python.xml"</span><span
+                                              style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                              </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                              </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="SQL"</span><span
+                                                  style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.SQL.xml"</span><span
+                                                      style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                      </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                                      </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="VB.NET"</span><span
+                                                          style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.VBDotNet.xml"</span><span
+                                                              style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                              </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                                              </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="VBScript"</span><span
+                                                                  style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.VBScript.xml"</span><span
+                                                                      style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                                      </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                                                      </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="XAML"</span><span
+                                                                          style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.XAML.xml"</span><span
+                                                                              style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                                              </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">language
+                                                                              </span><span style="color: #ff0000">key</span><span style="color: #0000ff">="XML"</span><span
+                                                                                  style="color: #ff0000"> definitionPath</span><span style="color: #0000ff">="~/system_dntb/Lexers/ActiproSoftware.XML.xml"</span><span
+                                                                                      style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                                                      </span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">languages</span><span
+                                                                                          style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                                                                          </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">lineNumberMargin
+                                                                                          </span><span style="color: #ff0000">foreColor</span><span style="color: #0000ff">="Teal"</span><span
+                                                                                              style="color: #ff0000"> paddingCharacter</span><span style="color: #0000ff">=" "</span><span
+                                                                                                  style="color: #ff0000"> visible</span><span style="color: #0000ff">="true"</span><span
+                                                                                                      style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                                                                                      </span>
+                      <span style="color: #0000ff">&lt;</span><span style="color: #800000">outlining </span>
+                      <span style="color: #ff0000">enabled</span><span style="color: #0000ff">="true"</span><span
+                          style="color: #ff0000"> imagesPath</span><span style="color: #0000ff">="~/system_dntb/OutliningIndicators/"</span><span
+                              style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                              </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">spacesInTabs
+                              </span><span style="color: #ff0000">count</span><span style="color: #0000ff">="4"</span><span
+                                  style="color: #0000ff">/&gt;</span><span style="color: #000000"><br />
+                                  </span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">codeHighlighter</span><span
+                                      style="color: #0000ff">&gt;</span><span style="color: #000000"><br />
+                                      </span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">configuration</span><span
+                                          style="color: #0000ff">&gt;</span></div>
+              </div>
+<br />
+          </td>
+          <td width="3%" class="error"></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<div align="center"> 
+  <hr noshade>
+  <div align="left"><a href="http://www.aspxcn.com.cn"><font color="#000000"><span style="font-family: Arial"><span style="font-size: 12pt">&copy;</span> </span>2003-2009 DotNetTextBox&#8482; v6.0 DotNet中华网版权所有</font></a></div>
+</div>
+</body>
+</html>
