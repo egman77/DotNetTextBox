@@ -29,6 +29,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTextBox", "..\..\hdh_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Word_dntb", "..\..\hdh_workspaces2\C2011_03_01_成果文件报送管理系统项目\ProjectCostSystem_20160407_注册信息需求变更_开发\Controls\DotNetTextBox\Word_dntb\Word_dntb.csproj", "{76094872-17E8-4A36-8243-E737E848F4BF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{41F87359-F0B4-4D81-A8DF-EFE06BBE0A9D}"
+	ProjectSection(SolutionItems) = preProject
+		gpl-3_0.txt = gpl-3_0.txt
+		ReadMe.txt = ReadMe.txt
+		Version.txt = Version.txt
+		使用帮助.chm = 使用帮助.chm
+		使用说明.txt = 使用说明.txt
+		控件可视化配置工具.exe = 控件可视化配置工具.exe
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|.NET = Debug|.NET
