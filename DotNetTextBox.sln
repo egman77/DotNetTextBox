@@ -35,7 +35,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{41F87359-F0B
 		ReadMe.txt = ReadMe.txt
 		Version.txt = Version.txt
 		使用帮助.chm = 使用帮助.chm
-		使用说明.txt = 使用说明.txt
 		控件可视化配置工具.exe = 控件可视化配置工具.exe
 	EndProjectSection
 EndProject

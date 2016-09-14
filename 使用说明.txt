@@ -1,4 +1,0 @@
-[Asp.Net Ajax支持包使用说明]
-使DotNetTextBox控件完美支持Asp.Net Ajax及UpdatePanel的支持包,使用此支持包后DotNetTextBox即可完美运行在Asp.Net Ajax的UpdatePanel内,轻松地让DotNetTextBox实现无刷新的Ajax效果(不使用此支持包编译的DotNetTextBox将无法在UpdatePanel内正常工作)
-
-支持包使用:直接把目录内的文件及目录按原结构拷贝到原版根目录覆盖相同文件,并且打开DotNetTextBox2005.sln或DotNetTextBox2008.sln重新一次编译项目后即可,新生成的DotNetTextBox.dll将完美支持Asp.Net Ajax UpdatePanel!
