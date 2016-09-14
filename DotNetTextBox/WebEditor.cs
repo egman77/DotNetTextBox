@@ -883,6 +883,9 @@ namespace DotNetTextBox
             }
         }
 
+
+      //  public override Unit  Width { get; set; }
+
         #endregion
         //自定义属性添加完成
 
@@ -1579,7 +1582,9 @@ namespace DotNetTextBox
                 }
                 else
                 {
-                    tw = Int32.Parse(tw.Replace("px", "")) + 5 + "px";
+                   if(!string.IsNullOrEmpty(tw)&&!tw.EndsWith("%"))
+                        tw = Int32.Parse(tw.Replace("px", "")) + 5 + "px";
+
                     dom2 = "<div id='dom2' style=\"float:right;width:130px\">";
                     if (HttpContext.Current.Request.Browser.MajorVersion < 3)
                     {

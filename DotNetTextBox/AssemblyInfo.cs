@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyDescription("AspxCn.Com.Cn Crew")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("DotNet中华网")]
-[assembly: AssemblyProduct("DotNetTextBox V6.0.8 Retail Version")]
+[assembly: AssemblyProduct("DotNetTextBox V6.0.9 Retail Version")]
 [assembly: AssemblyCopyright("Aspxcn.Com.Cn中华网版权所有")]
 [assembly: AssemblyTrademark("DotNetTextBox")]
 [assembly: AssemblyCulture("")]
@@ -27,7 +27,8 @@ using System.Resources;
 // 您可以指定所有值，或使用“修订号”和“内部版本号”的默认值，方法为按如下方式 
 // 使用“*”：
 
-[assembly: AssemblyVersion("6.0.8")]
+//[assembly: AssemblyVersion("6.0.8")]
+[assembly: AssemblyVersion("6.0.9")] //hdh 更新
 
 //
 // 要对程序集进行签名，必须指定要使用的密钥。有关程序集签名的更多信息，请参考 
@@ -59,5 +60,5 @@ using System.Resources;
 //       文档。
 //
 [assembly: AssemblyDelaySign(false)]
-[assembly: AssemblyFileVersionAttribute("6.0.8")]
+[assembly: AssemblyFileVersionAttribute("6.0.9")]
 [assembly: NeutralResourcesLanguageAttribute("zh-CHS")]
