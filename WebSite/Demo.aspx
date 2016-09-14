@@ -211,7 +211,7 @@ a:hover {color:#507CD1;text-decoration :none;position: relative; left: 1px; top:
                 <td align="left" colspan="4" style="height: 60px; width: 801px;">
                         <img align="baseline" border="0" height="60" src="system_dntb/skin/xp/img/logo.png"
                             width="260" />
-                    <span style="color: #ffffff">多功能的DHTML在线所见即所得编辑器控件(For Asp.Net2.0/3.0/3.5)</span></td>
+                    <span style="color: #ffffff">多功能的DHTML在线所见即所得编辑器控件(For Asp.Net 3.5)</span></td>
             </tr>
         </table><div align=center style="padding-top:5px">
             <table border="0" cellpadding="0" cellspacing="0" width="99%">
