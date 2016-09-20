@@ -34,9 +34,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{41F87359-F0B
 		控件可视化配置工具.exe = 控件可视化配置工具.exe
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTextBox", "..\..\hdh_workspaces2\C2011_03_01_成果文件报送管理系统项目\ProjectCostSystem_20160407_注册信息需求变更_开发\Controls\DotNetTextBoxV6\DotNetTextBox\DotNetTextBox.csproj", "{F330FBCD-6381-4D42-8F1A-1C921CC26ABA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTextBox", "DotNetTextBox\DotNetTextBox.csproj", "{F330FBCD-6381-4D42-8F1A-1C921CC26ABA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Word_dntb", "..\..\hdh_workspaces2\C2011_03_01_成果文件报送管理系统项目\ProjectCostSystem_20160407_注册信息需求变更_开发\Controls\DotNetTextBoxV6\Word_dntb\Word_dntb.csproj", "{76094872-17E8-4A36-8243-E737E848F4BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Word_dntb", "Word_dntb\Word_dntb.csproj", "{76094872-17E8-4A36-8243-E737E848F4BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
