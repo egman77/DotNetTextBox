@@ -235,6 +235,8 @@
   <resource name="exist">文件已經存在，請重命名後上傳!</resource>
   <resource name="overmaxsize">上傳失敗，超過單個上傳文件限制或超過可用空間限制!</resource>
   <resource name="errortype">上傳失敗，文件類型不符!</resource>
+  <resource name="emptyContent">內容為空!</resource>
+  <resource name="noUploadedFile">沒有選擇任何待上傳文檔!</resource>
   <resource name="remoteupload">上傳遠端圖片</resource>
   <resource name="localupload">上傳本機圖片</resource>
   <resource name="volume">音量</resource>
