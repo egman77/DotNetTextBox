@@ -235,6 +235,8 @@
   <resource name="exist">A file with a name same as the target already exists!</resource>
   <resource name="overmaxsize">File Uploaded Fail,Over Single File MaxSize Or Over Space Limit!</resource>
   <resource name="errortype">File Uploaded Fail,The File format is not supported.!</resource>
+  <resource name="emptyContent">Content of File is Empty!</resource>
+  <resource name="noUploadedFile">Did not select any document!</resource>
   <resource name="remoteupload">Upload Network Images</resource>
   <resource name="localupload">Upload Local Images</resource>
   <resource name="volume">Vol</resource>
