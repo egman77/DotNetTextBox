@@ -122,7 +122,7 @@ namespace Word_dntb
                 }
                 return true;
             }
-            else if(!string.IsNullOrWhiteSpace(FileUpload1.PostedFile.FileName)&&FileUpload1.PostedFile.ContentLength==0)
+            else if(!string.IsNullOrEmpty(FileUpload1.PostedFile.FileName)&&FileUpload1.PostedFile.ContentLength==0)
             {
                 //ClientScript.RegisterStartupScript(typeof(Page), "Key", "alert('" + ResourceManager.GetString("emptyContent") + "')", true);
                 var message = ResourceManager.GetString("emptyContent");
