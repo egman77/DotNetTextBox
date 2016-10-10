@@ -28,7 +28,7 @@ using System.Resources;
 // 使用“*”：
 
 //[assembly: AssemblyVersion("6.0.8")]
-[assembly: AssemblyVersion("6.0.10.*")] //hdh 更新
+[assembly: AssemblyVersion("6.0.9")] //hdh 更新
 
 //
 // 要对程序集进行签名，必须指定要使用的密钥。有关程序集签名的更多信息，请参考 
@@ -60,5 +60,5 @@ using System.Resources;
 //       文档。
 //
 [assembly: AssemblyDelaySign(false)]
-[assembly: AssemblyFileVersionAttribute("6.0.10")]
+[assembly: AssemblyFileVersionAttribute("6.0.9")]
 [assembly: NeutralResourcesLanguageAttribute("zh-CHS")]

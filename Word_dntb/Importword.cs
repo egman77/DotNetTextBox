@@ -1,8 +1,11 @@
 using System;
+using System.Collections;
+using System.ComponentModel;
 using System.Web;
 using System.IO;
 using System.Text;
 using System.Web.UI;
+using System.Text.RegularExpressions;
 using DotNetTextBox;
 using Word.Plugin;
 
@@ -55,7 +58,6 @@ namespace Word_dntb
         /// </summary>
         public bool uploadWord()
         {
-            //文件内容为空时,也允许上传时 HaseFile==false
             if (FileUpload1.HasFile)
             {
                 string fileName = FileUpload1.PostedFile.FileName;
@@ -122,17 +124,8 @@ namespace Word_dntb
                 }
                 return true;
             }
-            else if(!string.IsNullOrWhiteSpace(FileUpload1.PostedFile.FileName)&&FileUpload1.PostedFile.ContentLength==0)
-            {
-                //ClientScript.RegisterStartupScript(typeof(Page), "Key", "alert('" + ResourceManager.GetString("emptyContent") + "')", true);
-                var message = ResourceManager.GetString("emptyContent");
-                ClientScript.RegisterStartupScript(typeof(Page), "Key", $"hideMenu('{message}',true);", true);
-               
-                return false;
-            }
             else
             {
-               
                 return false;
             }
         }
@@ -147,12 +140,6 @@ namespace Word_dntb
                 if (uploadWord())
                 {
                     ClientScript.RegisterStartupScript(typeof(Page), "Key", "addeditor();", true);
-                }
-                else
-                {
-                    // errer message uploadfail noUploadedFile
-                    string errerMessage = ResourceManager.GetString("uploadfail") +"<br/>"+ ResourceManager.GetString("noUploadedFile");
-                    ClientScript.RegisterStartupScript(typeof(Page), "Key", $"hideMenu('{errerMessage}',false);", true);
                 }
             }
         }
